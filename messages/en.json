@@ -1,0 +1,9 @@
+{
+  "PAGES": {
+    "LOGIN": {
+      "LOGIN": "login",
+      "PASSWORD": "password",
+      "LOGIN_BUTTON": "login"
+    }
+  }
+}
