@@ -2,8 +2,8 @@
   "PAGES": {
     "LOGIN": {
       "LOGIN": "login",
-      "PASSWORD": "password",
-      "LOGIN_BUTTON": "login"
+      "PASSWORD": "senha",
+      "LOGIN_BUTTON": "entrar"
     }
   }
 }
