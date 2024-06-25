@@ -17,7 +17,7 @@ const Input = (props: IInput) => {
 
   return (
     <div>
-      <input type={props.secret ? 'password' : 'text'} 
+      <input type={props.secret ? 'password' : 'text'}
         {...props} 
         className='rounded my-2 p-2 min-w-72 min-h-10'
         style={{
