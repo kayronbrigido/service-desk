@@ -1,10 +1,10 @@
 'use client'
 
 import { Button, Input } from '@src/components';
+import { useAppDispatch, useAppSelector } from '@src/hooks/useRedux';
+import AuthService from '@src/services/auth';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { firebaseAuth } from '@src/config/firebaseService';
-import { sign } from '@src/repositories/auth/auth';
 
 interface ILoginForm {
 	login: string,
@@ -20,9 +20,12 @@ const LoginPage = () => {
   const [form, setForm] = useState<ILoginForm>(initalLoginForm);
   const translate = useTranslations('PAGES.LOGIN');
 
+  const dispatch = useAppDispatch();
+  const { authenticated } = useAppSelector((state) => state.auth);
+
   const handleLogin = async () => {
     try {
-      await sign(form.login, form.password);
+      dispatch(AuthService.signin())
     } catch (error) { }
   };
 
@@ -50,6 +53,7 @@ const LoginPage = () => {
         style={{textTransform: 'capitalize'}} 
         onClick={handleLogin}
       />
+      <h1>{authenticated ? 'sim' : 'não'}</h1>
     </main>);
 }
 

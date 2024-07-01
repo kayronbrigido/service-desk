@@ -1,7 +1,7 @@
 'use client'
 import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import { useLocale } from 'next-intl';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const router = useRouter();
@@ -10,4 +10,5 @@ export default function Home() {
   useEffect(() => {
     router.replace(`/${locale}/login`);
   }, [router, locale]);
+  
 }
