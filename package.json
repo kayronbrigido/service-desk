@@ -11,11 +11,14 @@
     "cypress:run": "cypress run"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.2.6",
     "firebase": "^10.12.2",
+    "firebase-admin": "^12.2.0",
     "next": "14.2.4",
     "next-intl": "^3.15.2",
     "react": "^18.3.1",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-redux": "^9.1.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.6",
