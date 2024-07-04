@@ -30,7 +30,6 @@ export default function LoginPage() {
   const handleLogin = async () => {
     dispatch(AuthService.signin(form.login, form.password, (err) => {
       if(!err) {
-        alert('sem erro')
         router.replace(`/${locale}/dashboard`);
       }
     }))
@@ -68,8 +67,5 @@ export default function LoginPage() {
         style={{textTransform: 'capitalize'}} 
         onClick={handleLogin}
       />
-      <h1>{sessionStorage.getItem(SessionStorageKey.ACCESS_TOKEN)}</h1>
     </main>);
 }
-
-//export default LoginPage;

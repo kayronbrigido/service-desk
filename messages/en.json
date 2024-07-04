@@ -1,9 +1,21 @@
 {
   "PAGES": {
     "LOGIN": {
-      "LOGIN": "login",
-      "PASSWORD": "password",
-      "LOGIN_BUTTON": "login"
+      "LOGIN": "Login",
+      "PASSWORD": "Password",
+      "LOGIN_BUTTON": "Login"
+    }
+  },
+  "COMPONENTS": {
+    "SIDEBAR_MENU": {
+      "TITLE": {
+        "TICKETS": "Tickets"
+      },
+      "ROUTES": {
+        "OPEN_TICKET": "Open",
+        "COMPLETED_TICKET": "Completed",
+        "IN_PROGRESS_TICKET": "In Progress"
+      }
     }
   }
 }

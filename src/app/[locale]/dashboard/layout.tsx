@@ -1,6 +1,7 @@
 'use client'
 
 import { SessionStorageKey } from '@src/models/enums';
+import { SidebarMenu } from '@src/components';
 import { redirect } from 'next/navigation';
 import { useEffect } from 'react';
 import { useLocale } from 'next-intl';
@@ -23,5 +24,7 @@ export default function DashboardLayout({
     }
   }, [locale]);
   
-  return (<>{children}</>)
+  return (<div className='flex'>
+    <SidebarMenu />
+    {children}</div>)
 }

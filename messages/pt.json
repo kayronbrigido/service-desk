@@ -1,9 +1,21 @@
 {
   "PAGES": {
     "LOGIN": {
-      "LOGIN": "login",
-      "PASSWORD": "senha",
-      "LOGIN_BUTTON": "entrar"
+      "LOGIN": "Login",
+      "PASSWORD": "Senha",
+      "LOGIN_BUTTON": "Entrar"
+    }
+  },
+  "COMPONENTS": {
+    "SIDEBAR_MENU": {
+      "TITLE": {
+        "TICKETS": "Chamados"
+      },
+      "ROUTES": {
+        "OPEN_TICKET": "Abertos",
+        "COMPLETED_TICKET": "Finalizados",
+        "IN_PROGRESS_TICKET": "Em andamento"
+      }
     }
   }
 }
