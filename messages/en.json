@@ -9,12 +9,14 @@
   "COMPONENTS": {
     "SIDEBAR_MENU": {
       "TITLE": {
-        "TICKETS": "Tickets"
+        "TICKETS": "Tickets",
+        "USERS": "Users"
       },
       "ROUTES": {
         "OPEN_TICKET": "Open",
         "COMPLETED_TICKET": "Completed",
-        "IN_PROGRESS_TICKET": "In Progress"
+        "IN_PROGRESS_TICKET": "In Progress",
+        "CREATE_USER": "Create User"
       }
     }
   }

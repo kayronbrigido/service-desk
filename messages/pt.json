@@ -9,12 +9,14 @@
   "COMPONENTS": {
     "SIDEBAR_MENU": {
       "TITLE": {
-        "TICKETS": "Chamados"
+        "TICKETS": "Chamados",
+        "USERS": "Usuários"
       },
       "ROUTES": {
         "OPEN_TICKET": "Abertos",
         "COMPLETED_TICKET": "Finalizados",
-        "IN_PROGRESS_TICKET": "Em andamento"
+        "IN_PROGRESS_TICKET": "Em andamento",
+        "CREATE_USER": "Criar Usuário"
       }
     }
   }
