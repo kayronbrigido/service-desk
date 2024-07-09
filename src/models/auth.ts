@@ -5,7 +5,9 @@ export interface IAuthResponse {
 }
 
 export interface ICreateUserPayload {
-  login: string,
-  password: string,
-  role: RolesEnum
+  login?: string,
+  password?: string,
+  firstName?: '',
+  lastName?: '',
+  role?: RolesEnum
 }

@@ -4,6 +4,21 @@
       "LOGIN": "Login",
       "PASSWORD": "Senha",
       "LOGIN_BUTTON": "Entrar"
+    },
+    "DASHBOARD": {
+      "USERS": {
+        "CREATE_USER": {
+          "TITLE": "Adicionar Usuário",
+          "DESCRIPTION": "Preencha os campos para criação de usuário, todos os campos são obrigatórios",
+          "LOGIN": "Login",
+          "PASSWORD": "Senha",
+          "CONFIRM_PASSWORD": "Confirme a Senha",
+          "FIRST_NAME": "Nome",
+          "LAST_NAME": "Sobrenome",
+          "ROLE": "Função",
+          "CREATE": "Criar"
+        }
+      }
     }
   },
   "COMPONENTS": {

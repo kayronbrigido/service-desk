@@ -6,6 +6,7 @@ interface IButton {
   value?: string;
   type: 'button' | 'reset' | 'submit';
   style?: CSSProperties;
+  className?: string,
   onClick?: MouseEventHandler<HTMLInputElement>;
 }
 
@@ -28,7 +29,7 @@ const Button = (props: IButton) => {
     <div>
       <input
         {...props}
-        className='rounded my-2 p-2 min-w-72 min-h-10'
+        className={`rounded my-2 p-2 min-w-72 min-h-10 ${props.className}`}
         style={{
           backgroundColor: MainTheme.buttonPrimaryColorBackground,
           color: MainTheme.buttonPrimaryColorText,

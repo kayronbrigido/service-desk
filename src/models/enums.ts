@@ -5,5 +5,8 @@ export enum SessionStorageKey {
 }
 
 export enum RolesEnum {
-  SuperAdmin = 1
+  SuperAdmin = 1,
+  SupportCompany = 2,
+
+
 }
