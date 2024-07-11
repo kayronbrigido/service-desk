@@ -1,4 +1,5 @@
-import Link from 'next/link';
+'use client'
+
 import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
 

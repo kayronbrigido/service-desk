@@ -1,4 +1,16 @@
 {
+  "GENERAL": {
+    "ADDRESS": {
+      "STREET": "Street",
+      "NUMBER": "Number",
+      "NEIGHBORHOOD": "Neighborhood",
+      "CITY": "City",
+      "STATE": "State",
+      "COUNTRY": "Country",
+      "ZIP_CODE": "Zip Code",
+      "ADDITIONAL_INFORMATION": "Additional Information"
+    }
+  },
   "PAGES": {
     "LOGIN": {
       "LOGIN": "Login",
@@ -18,6 +30,22 @@
           "ROLE": "Role",
           "CREATE": "Create"
         }
+      },
+      "COMPANY": {
+        "CREATE_COMPANY": {
+          "TITLE": "",
+          "DESCRIPTION": "",
+          "TAX_IDENTIFIER": "",
+          "NAME": "",
+          "FANTASY_NAME": "",
+          "ADMIN": "",
+          "LOGIN": "",
+          "PASSWORD": "",
+          "CONFIRM_PASSWORD": "Confirme a Senha",
+          "PHONE": "",
+          "EMAIL": "",
+          "COMPANY_TYPE": ""
+        }
       }
     }
   },
@@ -25,13 +53,15 @@
     "SIDEBAR_MENU": {
       "TITLE": {
         "TICKETS": "Tickets",
-        "USERS": "Users"
+        "USERS": "Users",
+        "COMPANY": "Company"
       },
       "ROUTES": {
         "OPEN_TICKET": "Open",
         "COMPLETED_TICKET": "Completed",
         "IN_PROGRESS_TICKET": "In Progress",
-        "CREATE_USER": "Create User"
+        "CREATE_USER": "Add User",
+        "CREATE_COMPANY": "Add Company"
       }
     }
   },

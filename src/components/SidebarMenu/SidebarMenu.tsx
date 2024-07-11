@@ -10,14 +10,18 @@ const SidebarMenu = () => {
   const translate = useTranslations('COMPONENTS.SIDEBAR_MENU');
 
   const ticketsRoutes = [
-    {path: Routes.TicketsOpen, name: translate('ROUTES.OPEN_TICKET')},
-    {path: Routes.TicketsInProgress, name: translate('ROUTES.IN_PROGRESS_TICKET')},
-    {path: Routes.TicketsCompleted, name: translate('ROUTES.COMPLETED_TICKET')},    
+    {path: Routes.TICKETS_OPEN, name: translate('ROUTES.OPEN_TICKET')},
+    {path: Routes.TICKETS_IN_PROGRESS, name: translate('ROUTES.IN_PROGRESS_TICKET')},
+    {path: Routes.TICKETS_COMPLETED, name: translate('ROUTES.COMPLETED_TICKET')},    
   ];
 
   
   const usersRoutes = [
-    {path: Routes.CreateUser, name: translate('ROUTES.CREATE_USER')},
+    {path: Routes.CREATE_USER, name: translate('ROUTES.CREATE_USER')},
+  ]
+
+  const companyRoutes = [
+    {path: Routes.CREATE_COMPANY, name: translate('ROUTES.CREATE_COMPANY')},
   ]
   
   return(
@@ -28,6 +32,7 @@ const SidebarMenu = () => {
     }}>
       <LinkList title={translate('TITLE.TICKETS')} routes={ticketsRoutes} />
       <LinkList title={translate('TITLE.USERS')} routes={usersRoutes} />
+      <LinkList title={translate('TITLE.COMPANY')} routes={companyRoutes} />
     </div>
   )
 }

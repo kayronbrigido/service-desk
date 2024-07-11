@@ -1,9 +1,12 @@
+'use client'
+
 import React, { useState } from 'react';
 import { MainTheme } from '@src/config/theme';
 
 interface ISelectProps {
   title?: string,
   items: IItem[];
+  // eslint-disable-next-line no-unused-vars
   onChange: (selectedItem: string | number) => void;
 }
 

@@ -5,13 +5,13 @@ export enum SessionStorageKey {
 }
 
 export enum RolesEnum {
-  SuperAdmin = '1',
-  SupportCompany = '2',
-  Operator = '3',
+  SUPER_ADMIN = 1,
+  ADMIN = 2,
+  OPPERATOR = 3,
 }
 
 export enum CompanyType {
-  Support = 1,
-  Common = 2,
-  Both = 3
+  SUPPORT = 1,
+  COMMON = 2,
+  BOTH = 3
 }

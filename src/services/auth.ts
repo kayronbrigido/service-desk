@@ -1,9 +1,10 @@
 import AuthAPI from '@src/endpoints/auth/auth';
-import { ICreateUserPayload } from '@src/models/auth';
+import { ICreateCompanyPayload, ICreateUserPayload } from '@src/models/auth';
 import RolesAPI from '@src/endpoints/roles/roles';
-import { SessionStorageKey } from '@src/models/enums';
+import { RolesEnum, SessionStorageKey } from '@src/models/enums';
 import { setAuthenticated } from '@src/store/slicers/authSlice'
 import UserAPI from '@src/endpoints/users/users';
+import CompanyAPI from '@src/endpoints/companies/companies';
 
 
 const AuthService = {
@@ -33,6 +34,40 @@ const AuthService = {
       user = userCreated.user
         
       await UserAPI.createUser(user.uid, userData)
+      
+      // dispatch();
+      callback(null)
+    } catch (error) {
+      callback(error as Error)
+    }
+  },
+
+  createCompany: (
+    companyData: ICreateCompanyPayload,
+    callback = (err: Error | null) => {}) => async (dispatch: any) => {
+    
+    let user = null;
+    
+    try {
+        
+      const userCreated = await AuthAPI.createUser(companyData.login as string, companyData.password as string);
+      user = userCreated.user
+
+      delete companyData.password
+
+      const {login, firstName, lastName, ...companyPayload} = companyData;
+
+      const userData: ICreateUserPayload = {
+        login,      
+        firstName,
+        lastName,
+        role: RolesEnum.ADMIN
+      }
+
+      await UserAPI.createUser(user.uid, userData)
+      await CompanyAPI.createCompany(user.uid, companyPayload)
+
+      
       
       // dispatch();
       callback(null)

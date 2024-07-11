@@ -1,8 +1,12 @@
+'use client' 
+
 import { CSSProperties, MouseEventHandler, useState } from 'react';
 import { MainTheme } from '@config/theme';
 
 export enum ButtonTypeEnum {
+  // eslint-disable-next-line no-unused-vars
   FILLED = 'FILLED',
+  // eslint-disable-next-line no-unused-vars
   OUTLINED = 'OUTLINED'
 }
 interface IButton {

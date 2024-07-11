@@ -1,4 +1,16 @@
 {
+  "GENERAL": {
+    "ADDRESS": {
+      "STREET": "Rua",
+      "NUMBER": "Número",
+      "NEIGHBORHOOD": "Bairro",
+      "CITY": "Cidade",
+      "STATE": "Estado",
+      "COUNTRY": "País",
+      "ZIP_CODE": "CEP",
+      "ADDITIONAL_INFORMATION": "Complemento"
+    }
+  },
   "PAGES": {
     "LOGIN": {
       "LOGIN": "Login",
@@ -18,6 +30,23 @@
           "ROLE": "Função",
           "CREATE": "Criar"
         }
+      },
+      "COMPANY": {
+        "CREATE_COMPANY": {
+          "TITLE": "Adicionar Empresa",
+          "DESCRIPTION": "Todos os campos são obrigatórios",
+          "TAX_IDENTIFIER": "CNPJ",
+          "NAME": "Razão Social",
+          "FANTASY_NAME": "Nome fantasia",
+          "ADMIN_NAME": "Nome do Administrador",
+          "ADMIN_NAME_LAST_NAME": "Sobrenome do Administrador",
+          "LOGIN": "Login",
+          "PASSWORD": "Senha",
+          "CONFIRM_PASSWORD": "Confirme a Senha",
+          "PHONE": "Telefone / Celular",
+          "EMAIL": "Email",
+          "COMPANY_TYPE": "Tipo de empresa"
+        }
       }
     }
   },
@@ -25,13 +54,15 @@
     "SIDEBAR_MENU": {
       "TITLE": {
         "TICKETS": "Chamados",
-        "USERS": "Usuários"
+        "USERS": "Usuários",
+        "COMPANY": "Empresa"
       },
       "ROUTES": {
         "OPEN_TICKET": "Abertos",
         "COMPLETED_TICKET": "Finalizados",
         "IN_PROGRESS_TICKET": "Em andamento",
-        "CREATE_USER": "Criar Usuário"
+        "CREATE_USER": "Adicionar Usuário",
+        "CREATE_COMPANY": "Adicionar Empresa"
       }
     }
   },

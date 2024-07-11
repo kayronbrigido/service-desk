@@ -7,8 +7,8 @@ interface IInput {
   multiple?: boolean;
   placeholder?: string;
   required?: boolean;
-  onChange?: ChangeEventHandler<T>;
-  value?: string | readonly string[] | number;
+  onChange: ChangeEventHandler<T>;
+  value: string | readonly string[] | number;
   name?: string
   secret?: boolean
 } 
