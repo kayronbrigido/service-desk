@@ -34,5 +34,12 @@
         "CREATE_USER": "Criar Usuário"
       }
     }
+  },
+  "ENUMS": {
+    "ROLES": {
+      "1": "Super Admin",
+      "2": "Admin",
+      "3": "Operador"
+    }
   }
 }

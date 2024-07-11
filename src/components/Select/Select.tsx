@@ -1,10 +1,15 @@
-import { MainTheme } from '@src/config/theme';
 import React, { useState } from 'react';
+import { MainTheme } from '@src/config/theme';
 
 interface ISelectProps {
   title?: string,
-  items: string[];
-  onChange: (selectedItem: string) => void;
+  items: IItem[];
+  onChange: (selectedItem: string | number) => void;
+}
+
+interface IItem {
+  name: string,
+  value: string | number
 }
 
 const Select = ({ title, items, onChange }: ISelectProps) => {
@@ -30,8 +35,8 @@ const Select = ({ title, items, onChange }: ISelectProps) => {
           {title}
         </option>
         {items.map((item) => (
-          <option key={item} value={item}>
-            {item}
+          <option key={item.value} value={item.value}>
+            {item.name}
           </option>
         ))}
       </select>

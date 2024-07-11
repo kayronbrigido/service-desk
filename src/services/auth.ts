@@ -3,6 +3,7 @@ import { ICreateUserPayload } from '@src/models/auth';
 import RolesAPI from '@src/endpoints/roles/roles';
 import { SessionStorageKey } from '@src/models/enums';
 import { setAuthenticated } from '@src/store/slicers/authSlice'
+import UserAPI from '@src/endpoints/users/users';
 
 
 const AuthService = {
@@ -21,19 +22,19 @@ const AuthService = {
   },
 
   createUser: (
-    {login, password, role}: ICreateUserPayload,
+    userData: ICreateUserPayload,
     callback = (err: Error | null) => {}) => async (dispatch: any) => {
     
     let user = null;
     
     try {
         
-      const userCreated = await AuthAPI.createUser(login, password);
+      const userCreated = await AuthAPI.createUser(userData.login as string, userData.password as string);
       user = userCreated.user
         
-      await RolesAPI.addRoleToUser(user.uid, role);
+      await UserAPI.createUser(user.uid, userData)
       
-      //dispatch();
+      // dispatch();
       callback(null)
     } catch (error) {
       callback(error as Error)

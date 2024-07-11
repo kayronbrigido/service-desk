@@ -16,6 +16,7 @@ const initialValues: ICreateUserPayload = {
   role: undefined
 }
 
+
 const CreatUserPage = () => {
   const [form, setForm] = useState<ICreateUserPayload>(initialValues)
   const dispatch = useAppDispatch();
@@ -24,14 +25,22 @@ const CreatUserPage = () => {
     dispatch(AuthService.createUser(form))
   }
 
+  const translateEnum = useTranslations('ENUMS.ROLES');
   const translate = useTranslations('PAGES.DASHBOARD.USERS.CREATE_USER');
+  const roles = Object
+    .values(RolesEnum)
+    .filter(key => isNaN(Number(RolesEnum[key])))
+    .map((role) => ({
+      name: translateEnum(role),
+      value: role
+    }))
 
   return (
-    <div className='w-full flex flex-col content-center align-center items-center justify-items-center'>
-      <Container className='w-full p-10'>
+    <div className='w-full h-full m-16 flex flex-col content-center align-center items-center justify-items-center'>
+      <Container className='flex flex-col w-full p-10 content-center align-center items-center'>
         <h1>{translate('TITLE')}</h1>
         <h2>{translate('DESCRIPTION')}</h2>
-        <div className='flex justify-evenly align-center w-full'>
+        <div className='flex justify-evenly align-center w-full my-8'>
           <div>
             <Input value={form?.login}
               onChange={(e) => setForm({ ...form, login: e.target.value })}
@@ -62,18 +71,17 @@ const CreatUserPage = () => {
             />
             <Select
               title={translate('ROLE')}
-              items={[1, 2, 3, 4, 5, 6, 7, 8, 9]}
-              onChange={(role) => setForm({ ...form, role: Number(role) })} />
+              items={roles}
+              onChange={(role) => setForm({ ...form, role: Number(role) as unknown as RolesEnum })} />
           </div>
         </div>
+        <Button
+          type={'button'}
+          onClick={handleCreateUser}
+          value={translate('CREATE')}
+        />
       </Container>
-      <Button
-        type={'button'}
-        onClick={handleCreateUser}
-        value={translate('CREATE')}
-        className='my-10'
-      />
-      {Object.keys(RolesEnum).map((key) => (<p>{key}</p>))}
+
     </div>
   )
 }
