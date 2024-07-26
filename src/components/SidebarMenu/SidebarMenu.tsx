@@ -25,14 +25,15 @@ const SidebarMenu = () => {
   ]
   
   return(
-    <div className='flex flex-col w-60 h-screen mr-16 px-3 min-w-52' style={{
+    <div className='flex flex-col w-60 h-screen mr-16 px-3 min-w-52 fixed items-center' style={{
       backgroundColor: MainTheme.sidebarMenuColorBackground,
       borderRightWidth: 1,
       borderRightColor: MainTheme.borderPrimaryColorBorder
     }}>
-      <LinkList title={translate('TITLE.TICKETS')} routes={ticketsRoutes} />
-      <LinkList title={translate('TITLE.USERS')} routes={usersRoutes} />
-      <LinkList title={translate('TITLE.COMPANY')} routes={companyRoutes} />
+      <h1>USER NAME</h1>
+      <LinkList title={translate('TITLE.TICKETS')} routes={ticketsRoutes} className='mb-6'/>
+      <LinkList title={translate('TITLE.USERS')} routes={usersRoutes} className='mb-6' />
+      <LinkList title={translate('TITLE.COMPANY')} routes={companyRoutes} className='mb-6' />
     </div>
   )
 }

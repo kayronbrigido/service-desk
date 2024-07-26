@@ -32,6 +32,5 @@ export interface ICreateCompanyPayload extends ICreateLogin, IAddress {
   fantasyName?: string,
   phone?: string,
   email?: string,
-  companyType?: string,
 }
 

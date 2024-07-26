@@ -15,7 +15,7 @@ export default function DashboardLayout({
 }>) {
 
   const locale = useLocale();
-  
+
   useEffect(() => {
 
     const token = sessionStorage.getItem(SessionStorageKey.ACCESS_TOKEN) as string;
@@ -23,8 +23,12 @@ export default function DashboardLayout({
       redirect(`/${locale}/`);
     }
   }, [locale]);
-  
-  return (<div className='flex'>
-    <SidebarMenu />
-    {children}</div>)
+
+  return (
+    <div className='flex'>
+      <SidebarMenu />
+      <div className='ml-64 w-4/5'>
+        {children}
+      </div>
+    </div>)
 }

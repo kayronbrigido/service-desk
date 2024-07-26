@@ -35,6 +35,9 @@
         "CREATE_COMPANY": {
           "TITLE": "Adicionar Empresa",
           "DESCRIPTION": "Todos os campos são obrigatórios",
+          "ADDRESS_INFO": "Endereço da empresa",
+          "COMPANY_INFO": "Informações da Empresa",
+          "ADMIN_LOGIN": "Login do Administrador",
           "TAX_IDENTIFIER": "CNPJ",
           "NAME": "Razão Social",
           "FANTASY_NAME": "Nome fantasia",
@@ -45,7 +48,9 @@
           "CONFIRM_PASSWORD": "Confirme a Senha",
           "PHONE": "Telefone / Celular",
           "EMAIL": "Email",
-          "COMPANY_TYPE": "Tipo de empresa"
+          "COMPANY_TYPE": "Tipo de empresa",
+          "BUTTON_CONFIRM": "Criar",
+          "BUTTON_CANCEL": "Limpar"
         }
       }
     }

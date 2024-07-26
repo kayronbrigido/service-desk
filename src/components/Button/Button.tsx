@@ -11,12 +11,12 @@ export enum ButtonTypeEnum {
 }
 interface IButton {
   alt?: string;
-  value?: string;
+  value: string;
   type: 'button' | 'reset' | 'submit';
   buttonStyle?: ButtonTypeEnum,
   style?: CSSProperties;
   className?: string,
-  onClick?: MouseEventHandler<HTMLInputElement>;
+  onClick: MouseEventHandler<HTMLInputElement>;
 }
 
 const Button = (props: IButton) => {
@@ -33,15 +33,17 @@ const Button = (props: IButton) => {
   const handleMouseLeave = () => {
     setIsPressed(false);
   };
+  
+  const {buttonStyle, ...rest} = props;
+  props = rest;
 
-  const buttonStyle = props.buttonStyle === ButtonTypeEnum.OUTLINED ? {
+  const buttonStyles = buttonStyle === ButtonTypeEnum.OUTLINED ? {
     color: MainTheme.buttonPrimaryColorText,
-    borderColor: MainTheme.buttonPrimaryColorBackground,
-    borderWidth: 2
   } : {
     backgroundColor: MainTheme.buttonPrimaryColorBackground,
     color: MainTheme.buttonPrimaryColorText,
   }
+
 
   return (
     <div>
@@ -49,7 +51,9 @@ const Button = (props: IButton) => {
         {...props}
         className={`rounded my-2 p-2 min-w-72 min-h-10 ${props.className}`}
         style={{
-          ...buttonStyle,
+          ...buttonStyles,
+          borderWidth: 2,
+          borderColor: MainTheme.buttonPrimaryColorBackground,
           cursor: 'pointer',
           transform: isPressed ? 'scale(0.95)' : 'scale(1)',
           transition: 'transform 0.1s ease-in-out',

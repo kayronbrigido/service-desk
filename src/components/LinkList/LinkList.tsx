@@ -2,20 +2,22 @@ import { Link } from "..";
 
 interface ILinkListProps {
   title?: string,
-  routes: ILinkItem[]
+  routes: ILinkItem[],
+  className?: string
 }
 
 interface ILinkItem {
   path: string,
-  name: string
+  name: string,
 }
 
 const LinkList = ({
   title,
-  routes
+  routes,
+  className
 }: ILinkListProps) => {
   return (
-    <div>
+    <div className={className}>
       <p className="my-1">{title}</p>
       <ul className="mx-5">
         {routes.map((route) =>
