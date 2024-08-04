@@ -26,11 +26,14 @@ export interface ICreateUserPayload extends ICreateLogin {
   role?: RolesEnum
 }
 
-export interface ICreateCompanyPayload extends ICreateLogin, IAddress {
+export interface ICreateCompanyPayload extends ICreateLogin {
   taxIdentifier?: string,
   name?: string,
   fantasyName?: string,
   phone?: string,
   email?: string,
+  address?: IAddress,
+  type?: number
+  userId?: string
 }
 

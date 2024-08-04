@@ -76,6 +76,11 @@
       "1": "Super Admin",
       "2": "Admin",
       "3": "Operador"
+    },
+    "COMPANIES_TYPES": {
+      "1": "Suporte",
+      "2": "Padrão",
+      "3": "Ambos"
     }
   }
 }

@@ -10,3 +10,9 @@ export enum RolesEnum {
   OPPERATOR = 3,
   SUPPORT = 4
 }
+
+export enum CompaniesType {
+  SUPPORT = 1,
+  COMMON = 2,
+  BOTH = 3
+}

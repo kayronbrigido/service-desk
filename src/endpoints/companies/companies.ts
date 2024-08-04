@@ -7,7 +7,8 @@ const createCompany = async (userAuthId: string, userData: ICreateCompanyPayload
   delete userData.password
 
   const response = await addDoc(collection(dataBase, 'company'), {
-    userAuthId: userAuthId, userData
+    userAuthId: userAuthId, 
+    ...userData
   })
 
   return response;

@@ -46,12 +46,13 @@ const AuthService = {
     companyData: ICreateCompanyPayload,
     callback = (err: Error | null) => {}) => async (dispatch: any) => {
     
-    let user = null;
+    let userAuth = null;
     
     try {
-        
+      
+      console.log('veio aqui', companyData)
       const userCreated = await AuthAPI.createUser(companyData.login as string, companyData.password as string);
-      user = userCreated.user
+      userAuth = userCreated.user
 
       delete companyData.password
 
@@ -64,12 +65,10 @@ const AuthService = {
         role: RolesEnum.ADMIN
       }
 
-      await UserAPI.createUser(user.uid, userData)
-      await CompanyAPI.createCompany(user.uid, companyPayload)
+      const user = await UserAPI.createUser(userAuth.uid, userData)
+      await CompanyAPI.createCompany(userAuth.uid, {...companyPayload, userId: user.id})
 
-      
-      
-      // dispatch();
+      dispatch();
       callback(null)
     } catch (error) {
       callback(error as Error)

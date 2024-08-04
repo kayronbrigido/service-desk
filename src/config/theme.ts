@@ -4,7 +4,7 @@ export const MainTheme = {
   buttonPrimaryColorBackground: '#0000FF',
   buttonPrimaryColorBorder: '#0000FF',
   buttonPrimaryColorText: '#FFFFFF',
-  inputPrimaryColorBackground: '#FFFFFF30',
+  inputPrimaryColorBackground: '#2f2f2f',
   inputPrimaryColorText: '#FFFFFF',
   textPrimaryColor: '#FFFFFF',
   sidebarMenuColorBackground:'#071025',
