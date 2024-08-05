@@ -7,7 +7,7 @@
       "CITY": "City",
       "STATE": "State",
       "COUNTRY": "Country",
-      "ZIP_CODE": "Zip Code",
+      "ZIP_CODE": "ZIP Code",
       "ADDITIONAL_INFORMATION": "Additional Information"
     }
   },
@@ -21,7 +21,7 @@
       "USERS": {
         "CREATE_USER": {
           "TITLE": "Add User",
-          "DESCRIPTION": "Fill in the fields for user creation, all fields are mandatory",
+          "DESCRIPTION": "Fill in the fields to create a user, all fields are mandatory",
           "LOGIN": "Login",
           "PASSWORD": "Password",
           "CONFIRM_PASSWORD": "Confirm Password",
@@ -33,18 +33,24 @@
       },
       "COMPANY": {
         "CREATE_COMPANY": {
-          "TITLE": "",
-          "DESCRIPTION": "",
-          "TAX_IDENTIFIER": "",
-          "NAME": "",
-          "FANTASY_NAME": "",
-          "ADMIN": "",
-          "LOGIN": "",
-          "PASSWORD": "",
-          "CONFIRM_PASSWORD": "Confirme a Senha",
-          "PHONE": "",
-          "EMAIL": "",
-          "COMPANY_TYPE": ""
+          "TITLE": "Add Company",
+          "DESCRIPTION": "All fields are mandatory",
+          "ADDRESS_INFO": "Company Address",
+          "COMPANY_INFO": "Company Information",
+          "ADMIN_LOGIN": "Admin Login",
+          "TAX_IDENTIFIER": "Tax Identifier",
+          "NAME": "Company Name",
+          "FANTASY_NAME": "Trade Name",
+          "ADMIN_FIRST_NAME": "Admin First Name",
+          "ADMIN_LAST_NAME": "Admin Last Name",
+          "LOGIN": "Login",
+          "PASSWORD": "Password",
+          "CONFIRM_PASSWORD": "Confirm Password",
+          "PHONE": "Phone / Mobile",
+          "EMAIL": "Email",
+          "COMPANY_TYPE": "Company Type",
+          "BUTTON_CONFIRM": "Create",
+          "BUTTON_CANCEL": "Clear"
         }
       }
     }
@@ -70,6 +76,11 @@
       "1": "Super Admin",
       "2": "Admin",
       "3": "Operator"
+    },
+    "COMPANIES_TYPES": {
+      "1": "Support",
+      "2": "Standard",
+      "3": "Both"
     }
   }
 }

@@ -10,18 +10,18 @@ const SidebarMenu = () => {
   const translate = useTranslations('COMPONENTS.SIDEBAR_MENU');
 
   const ticketsRoutes = [
-    {path: Routes.TICKETS_OPEN, name: translate('ROUTES.OPEN_TICKET')},
-    {path: Routes.TICKETS_IN_PROGRESS, name: translate('ROUTES.IN_PROGRESS_TICKET')},
-    {path: Routes.TICKETS_COMPLETED, name: translate('ROUTES.COMPLETED_TICKET')},    
+    {path: Routes.TICKETS_OPEN, name: translate('ROUTES.OPEN_TICKET'), testId: 'routeOpenTicket'},
+    {path: Routes.TICKETS_IN_PROGRESS, name: translate('ROUTES.IN_PROGRESS_TICKET'), testId: 'routeTicketInProgress'},
+    {path: Routes.TICKETS_COMPLETED, name: translate('ROUTES.COMPLETED_TICKET'), testId: 'routeCompletedTicket'},    
   ];
 
   
   const usersRoutes = [
-    {path: Routes.CREATE_USER, name: translate('ROUTES.CREATE_USER')},
+    {path: Routes.CREATE_USER, name: translate('ROUTES.CREATE_USER'), testId: 'routeCreateUser'},
   ]
 
   const companyRoutes = [
-    {path: Routes.CREATE_COMPANY, name: translate('ROUTES.CREATE_COMPANY')},
+    {path: Routes.CREATE_COMPANY, name: translate('ROUTES.CREATE_COMPANY'), testId: 'routeCreateCompany'},
   ]
   
   return(

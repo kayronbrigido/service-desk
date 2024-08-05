@@ -1,0 +1,22 @@
+{
+  "taxIdentifier": "12345678000190",
+  "name": "End to End Test Ltda",
+  "fantasyName": "E2E Fantasy Name",
+  "phone": "11987654321",
+  "email": "contact@e2e.com",
+  "address": {
+    "street": "Av. dos Teste Automatizados",
+    "number": "1000",
+    "neighborhood": "E2E",
+    "city": "Campinas",
+    "state": "SP",
+    "country": "Brazil",
+    "zipCode": "13000000",
+    "additionalInformation": "Próximo ao outro Teste"
+  },
+  "type": "3",
+  "login": "admin_techinno",
+  "password": "SecurePassword123!",
+  "firstName": "E2E",
+  "lastName": "Test"
+}

@@ -8,6 +8,7 @@ interface ISelectProps {
   items: IItem[];
   // eslint-disable-next-line no-unused-vars
   onChange: (selectedItem: string | number) => void;
+  testId?: string
 }
 
 interface IItem {
@@ -15,7 +16,7 @@ interface IItem {
   value: string | number
 }
 
-const Select = ({ title, items, onChange }: ISelectProps) => {
+const Select = ({ title, items, testId, onChange }: ISelectProps) => {
   const [selectedItem, setSelectedItem] = useState<string>('');
   const [isHide, setIsHide] = useState(true);
 
@@ -26,7 +27,7 @@ const Select = ({ title, items, onChange }: ISelectProps) => {
   };
 
   return (
-    <div className='rounded my-2 min-w-72 min-h-10'
+    <div className='rounded my-2 min-w-72 min-h-10' data-testId={testId}
       onClick={() => setIsHide(!isHide)}
       style={{
         backgroundColor: MainTheme.inputPrimaryColorBackground,
@@ -38,6 +39,7 @@ const Select = ({ title, items, onChange }: ISelectProps) => {
       <div className="flex flex-col content" style={{ position: 'absolute', zIndex: 99, display: isHide ? 'none' : 'flex' }}>
         {items.map((item) => (
           <span
+            data-testId={`${testId}Option${item.value}`}
             onClick={() => handleChange(item.value)}
             className='rounded min-w-72 min-h-10 p-2'
             key={item.value}
