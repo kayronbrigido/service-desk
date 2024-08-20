@@ -82,5 +82,14 @@
       "2": "Padrão",
       "3": "Ambos"
     }
+  },
+  "ERRORS": {
+    "CREATE_COMPANY_ERROR": "Erro ao criar empresa",
+    "CREATE_USER_ERROR": "Erro ao criar usuário",
+    "INVALID_CREDENTIALS": "Credenciais inválidas"
+  },
+  "SUCCESS_MESSAGES": {
+    "CREATE_COMPANY": "Empresa criada com sucesso",
+    "CREATE_USER": "Usuário criado com sucesso"
   }
 }

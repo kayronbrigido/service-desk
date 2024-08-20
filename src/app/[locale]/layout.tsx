@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import ReduxProvider from '@src/store/provider';
 import { getMessages } from 'next-intl/server';
+import { Toaster } from 'react-hot-toast';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default async function RootLayout({
       <body className={inter.className}>
         <NextIntlClientProvider messages={messages}>
           <ReduxProvider>
+            <Toaster />
             {children}
           </ReduxProvider>
         </NextIntlClientProvider>

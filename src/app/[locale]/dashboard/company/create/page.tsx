@@ -9,6 +9,8 @@ import { CompaniesType } from '@src/models/enums';
 import { maskCEP, maskCNPJ, maskPhone } from '@src/utils/masks';
 import AuthService from '@src/services/auth';
 import { useAppDispatch } from '@src/hooks/useRedux';
+import Toasty from '@src/services/toast';
+import { ToastContainer } from 'react-toastify';
 
 const CreateCompanyPage = () => {
   const [form, setForm] = useState<ICreateCompanyPayload>()
@@ -49,6 +51,7 @@ const CreateCompanyPage = () => {
           <h1>{translate('ADDRESS_INFO')}</h1>
         </div>
         <div className='flex justify-center'>
+        
           <div className='columns-2'>
             <Input placeholder={translateAddress('STREET')}
               onChange={(e) => { setForm({ ...form, address: { ...form?.address, street: e.target.value } }) }}

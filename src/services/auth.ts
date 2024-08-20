@@ -5,6 +5,7 @@ import { RolesEnum, SessionStorageKey } from '@src/models/enums';
 import { setAuthenticated } from '@src/store/slicers/authSlice'
 import UserAPI from '@src/endpoints/users/users';
 import CompanyAPI from '@src/endpoints/companies/companies';
+import Toasty from './toast';
 
 
 const AuthService = {
@@ -18,6 +19,7 @@ const AuthService = {
       dispatch(setAuthenticated(true));
       callback(null);
     } catch(e) {
+      Toasty.error('INVALID_CREDENTIALS');
       callback(e as Error)
     }
   },
@@ -45,12 +47,11 @@ const AuthService = {
   createCompany: (
     companyData: ICreateCompanyPayload,
     callback = (err: Error | null) => {}) => async (dispatch: any) => {
-    
+  
     let userAuth = null;
     
     try {
       
-      console.log('veio aqui', companyData)
       const userCreated = await AuthAPI.createUser(companyData.login as string, companyData.password as string);
       userAuth = userCreated.user
 
@@ -69,8 +70,10 @@ const AuthService = {
       await CompanyAPI.createCompany(userAuth.uid, {...companyPayload, userId: user.id})
 
       dispatch();
+      Toasty.success('CREATE_COMPANY');
       callback(null)
     } catch (error) {
+      Toasty.error('CREATE_COMPANY')
       callback(error as Error)
     }
   }
