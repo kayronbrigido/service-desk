@@ -28,7 +28,7 @@ Running the tests is very simple. Just ensure Cypress is installed and then run 
 
 It's important to note that in the ./cypress/fixtures folder, there are some test configuration files. For example, the companyRegister.json file contains data for registering a company in the system.
 
+# :computer: Developed by:
 
-:computer: Developed by: 
-
-Kayron Brigido
+ ![Kayron Brigido](https://avatars.githubusercontent.com/u/33587550?v=4&size=64)
+ 
