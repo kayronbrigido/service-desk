@@ -1,8 +1,12 @@
 import { ICreateCompanyPayload } from '@src/models/auth';
 
-describe('Company Registration', () => {
-  it('should register company', () => {
-    cy.visit('/')
+describe('Register Companies', () => {
+  beforeEach(() => {
+    cy.fixture('bulkCompanyRegister').as('companies');
+  });
+
+  it('should login', () => {
+    cy.visit('/');
 
     cy.get('[data-testId="loginInput"]').type('admin@admin.com');
     cy.get('[data-testId="passwordInput"]').type('123456');
@@ -12,9 +16,27 @@ describe('Company Registration', () => {
 
     cy.get('[data-testId="routeCreateCompany"]').click();
 
+    cy.wait(2000);
+
+    cy.url().should('include', '/dashboard');
+
+  });
+
+  it('should fill out the form for each company', function () {
+
+    cy.visit('/');
+
+    cy.get('[data-testId="loginInput"]').type('admin@admin.com');
+    cy.get('[data-testId="passwordInput"]').type('123456');
+    cy.get('[data-testId="loginButton"]').click()
+
     cy.wait(2000)
 
-    cy.fixture('companyRegister').then((company: ICreateCompanyPayload) => {
+    cy.get('[data-testId="routeCreateCompany"]').click();
+
+    cy.wait(2000);
+
+    this.companies.forEach((company: ICreateCompanyPayload) => {
 
       cy.get('[data-testId="companyAddressStreet"]').type(company.address?.street ?? '');
       cy.get('[data-testId="companyAddressNumber"]').type(company.address?.number ?? '');
@@ -37,8 +59,12 @@ describe('Company Registration', () => {
       cy.get('[data-testId="companyPassword"]').type(company.password ?? '');
       cy.get('[data-testId="companyConfirmPassword"]').type(company.password ?? '');
       cy.get('[data-testId="companyType"]').click();
-      cy.get('[data-testId="companyTypeOption3"]').click();
+      cy.get(`[data-testId="companyTypeOption${company.type}"]`).click();
+      cy.get('[data-testId="companyCreateConfirm"]').click();
 
-    })
-  })
-})
+      cy.wait(2000);
+
+      cy.get('[data-testId="companyAddressStreet"]').should('be.empty')
+    });
+  });
+});

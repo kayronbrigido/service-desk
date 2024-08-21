@@ -1,16 +1,15 @@
 'use client'
 
 import { Button, Container, Input, Select } from '@src/components';
-import { ButtonTypeEnum } from '@src/components/Button/Button';
-import { ICreateCompanyPayload } from '@src/models/auth';
-import { useState } from 'react';
-import { useTranslations } from 'next-intl';
-import { CompaniesType } from '@src/models/enums';
 import { maskCEP, maskCNPJ, maskPhone } from '@src/utils/masks';
 import AuthService from '@src/services/auth';
+import { ButtonTypeEnum } from '@src/components/Button/Button';
+import { CompaniesType } from '@src/models/enums';
+import { ICreateCompanyPayload } from '@src/models/auth';
 import { useAppDispatch } from '@src/hooks/useRedux';
-import Toasty from '@src/services/toast';
-import { ToastContainer } from 'react-toastify';
+import { useState } from 'react';
+import { useTranslations } from 'next-intl';
+
 
 const CreateCompanyPage = () => {
   const [form, setForm] = useState<ICreateCompanyPayload>()
@@ -23,11 +22,19 @@ const CreateCompanyPage = () => {
 
   const handleSubmit = () => {
     if (form) {
-      dispatch(AuthService.createCompany(form))
+      dispatch(AuthService.createCompany(form, (err) => {
+        if(!err) {
+          handleClearForm();
+        }
+      }))
     }
   }
 
   const handleCancel = () => {
+    handleClearForm();
+  }
+
+  const handleClearForm = () => {
     setForm({});
     setPasswordConfirmation('');
   }
@@ -145,12 +152,14 @@ const CreateCompanyPage = () => {
             onChange={(e) => { setForm({ ...form, password: e.target.value }) }}
             value={form?.password ?? ''}
             data-testId='companyPassword'
+            secret
           />
           <Input
             placeholder={translate('CONFIRM_PASSWORD')}
             onChange={(e) => { setPasswordConfirmation(e.target.value) }}
             value={passwordConfirmation ?? ''}
             data-testId='companyConfirmPassword'
+            secret
           />
           <Select
             title={translate('COMPANY_TYPE')}
@@ -161,7 +170,7 @@ const CreateCompanyPage = () => {
         </div>
       </Container>
       <div className="flex justify-evenly w-full my-12">
-        <Button type={'button'} onClick={handleSubmit} value={translate('BUTTON_CONFIRM')} />
+        <Button type={'button'} data-testId='companyCreateConfirm' onClick={handleSubmit} value={translate('BUTTON_CONFIRM')} />
         <Button type={'button'} onClick={handleCancel} value={translate('BUTTON_CANCEL')} buttonStyle={ButtonTypeEnum.OUTLINED} />
       </div>
     </div>

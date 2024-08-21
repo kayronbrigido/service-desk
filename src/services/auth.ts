@@ -69,11 +69,15 @@ const AuthService = {
       const user = await UserAPI.createUser(userAuth.uid, userData)
       await CompanyAPI.createCompany(userAuth.uid, {...companyPayload, userId: user.id})
 
-      dispatch();
+      //dispatch();
       Toasty.success('CREATE_COMPANY');
       callback(null)
     } catch (error) {
-      Toasty.error('CREATE_COMPANY')
+      if(error?.message?.includes('email-already-in-use')){
+        Toasty.error('EMAIL_ALREADY_IN_USE');
+      } else {
+        Toasty.error('CREATE_COMPANY')
+      }
       callback(error as Error)
     }
   }

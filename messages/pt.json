@@ -86,7 +86,8 @@
   "ERRORS": {
     "CREATE_COMPANY_ERROR": "Erro ao criar empresa",
     "CREATE_USER_ERROR": "Erro ao criar usuário",
-    "INVALID_CREDENTIALS": "Credenciais inválidas"
+    "INVALID_CREDENTIALS": "Credenciais inválidas",
+    "EMAIL_ALREADY_IN_USE": "Email já esta sendo usado"
   },
   "SUCCESS_MESSAGES": {
     "CREATE_COMPANY": "Empresa criada com sucesso",

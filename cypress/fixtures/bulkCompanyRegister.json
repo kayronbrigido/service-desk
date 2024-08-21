@@ -1,0 +1,112 @@
+[
+  {
+    "taxIdentifier": "98765432000195",
+    "name": "Tech Innovations Inc.",
+    "fantasyName": "TechInnovate",
+    "phone": "21987654321",
+    "email": "info@techinnovate.com",
+    "address": {
+      "street": "Rua da Inovação",
+      "number": "500",
+      "neighborhood": "Techville",
+      "city": "São Paulo",
+      "state": "SP",
+      "country": "Brazil",
+      "zipCode": "01000000",
+      "additionalInformation": "Próximo ao Centro de Inovação"
+    },
+    "type": "3",
+    "login": "tech_admin@email.com",
+    "password": "Innovation123!",
+    "firstName": "Tech",
+    "lastName": "Innovator"
+  },
+  {
+    "taxIdentifier": "11223344000122",
+    "name": "Creative Solutions Ltd.",
+    "fantasyName": "CreativeSol",
+    "phone": "31987654321",
+    "email": "support@creativesol.com",
+    "address": {
+      "street": "Av. da Criatividade",
+      "number": "200",
+      "neighborhood": "Creativa",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "country": "Brazil",
+      "zipCode": "30000000",
+      "additionalInformation": "Próximo ao Parque Criativo"
+    },
+    "type": "2",
+    "login": "creative_admin@email.com",
+    "password": "CreativePass2024!",
+    "firstName": "Creative",
+    "lastName": "Solutions"
+  },
+  {
+    "taxIdentifier": "22334455000133",
+    "name": "Future Tech Ltda",
+    "fantasyName": "FutureTech",
+    "phone": "41987654321",
+    "email": "contact@futuretech.com",
+    "address": {
+      "street": "Rua das Inovações",
+      "number": "300",
+      "neighborhood": "Future",
+      "city": "Curitiba",
+      "state": "PR",
+      "country": "Brazil",
+      "zipCode": "80000000",
+      "additionalInformation": "Próximo ao Centro de Tecnologia"
+    },
+    "type": "2",
+    "login": "future_admin@email.com",
+    "password": "FutureSecure2024!",
+    "firstName": "Future",
+    "lastName": "Tech"
+  },
+  {
+    "taxIdentifier": "33445566000144",
+    "name": "Global Enterprises Ltd.",
+    "fantasyName": "GlobalEnter",
+    "phone": "61987654321",
+    "email": "contact@globalenter.com",
+    "address": {
+      "street": "Av. Global",
+      "number": "400",
+      "neighborhood": "Enter",
+      "city": "Brasília",
+      "state": "DF",
+      "country": "Brazil",
+      "zipCode": "70000000",
+      "additionalInformation": "Próximo ao Centro Empresarial"
+    },
+    "type": "1",
+    "login": "global_admin@email.com",
+    "password": "GlobalPass123!",
+    "firstName": "Global",
+    "lastName": "Enterprises"
+  },
+  {
+    "taxIdentifier": "44556677000155",
+    "name": "Innovative Systems Ltd.",
+    "fantasyName": "InnovSystems",
+    "phone": "31987654321",
+    "email": "info@innovsystems.com",
+    "address": {
+      "street": "Rua da Inovação",
+      "number": "600",
+      "neighborhood": "Inovate",
+      "city": "Fortaleza",
+      "state": "CE",
+      "country": "Brazil",
+      "zipCode": "60000000",
+      "additionalInformation": "Próximo ao Parque Tecnológico"
+    },
+    "type": "1",
+    "login": "innov_admin@email.com",
+    "password": "Innovative2024!",
+    "firstName": "Innovative",
+    "lastName": "Systems"
+  }
+]

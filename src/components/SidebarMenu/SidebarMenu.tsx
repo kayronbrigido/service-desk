@@ -22,6 +22,7 @@ const SidebarMenu = () => {
 
   const companyRoutes = [
     {path: Routes.CREATE_COMPANY, name: translate('ROUTES.CREATE_COMPANY'), testId: 'routeCreateCompany'},
+    {path: Routes.COMPANY_LIST, name: translate('ROUTES.COMPANY_LIST'), testId: 'routeCreateCompany'},
   ]
   
   return(
