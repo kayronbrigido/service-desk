@@ -63,35 +63,35 @@ const CreateCompanyPage = () => {
             <Input placeholder={translateAddress('STREET')}
               onChange={(e) => { setForm({ ...form, address: { ...form?.address, street: e.target.value } }) }}
               value={form?.address?.street ?? ''}
-              data-testId='companyAddressStreet' />
+              test-id='companyAddressStreet' />
             <Input placeholder={translateAddress('NUMBER')}
               onChange={(e) => { setForm({ ...form, address: { ...form?.address, number: e.target.value } }) }}
               value={form?.address?.number ?? ''}
-              data-testId='companyAddressNumber' />
+              test-id='companyAddressNumber' />
             <Input placeholder={translateAddress('NEIGHBORHOOD')}
               onChange={(e) => { setForm({ ...form, address: { ...form?.address, neighborhood: e.target.value } }) }}
               value={form?.address?.neighborhood ?? ''}
-              data-testId='companyAddressNeighborhood' />
+              test-id='companyAddressNeighborhood' />
             <Input placeholder={translateAddress('CITY')}
               onChange={(e) => { setForm({ ...form, address: { ...form?.address, city: e.target.value } }) }}
               value={form?.address?.city ?? ''}
-              data-testId='companyAddressCity' />
+              test-id='companyAddressCity' />
             <Input placeholder={translateAddress('STATE')}
               onChange={(e) => { setForm({ ...form, address: { ...form?.address, state: e.target.value } }) }}
               value={form?.address?.state ?? ''}
-              data-testId='companyAddressState' />
+              test-id='companyAddressState' />
             <Input placeholder={translateAddress('COUNTRY')}
               onChange={(e) => { setForm({ ...form, address: { ...form?.address, country: e.target.value } }) }}
               value={form?.address?.country ?? ''}
-              data-testId='companyAddressCountry' />
+              test-id='companyAddressCountry' />
             <Input placeholder={translateAddress('ZIP_CODE')}
               onChange={(e) => { setForm({ ...form, address: { ...form?.address, zipCode: e.target.value } }) }}
               value={maskCEP(form?.address?.zipCode ?? '')}
-              data-testId='companyAddressZipCode' />
+              test-id='companyAddressZipCode' />
             <Input placeholder={translateAddress('ADDITIONAL_INFORMATION')}
               onChange={(e) => { setForm({ ...form, address: { ...form?.address, additionalInformation: e.target.value } }) }}
               value={form?.address?.additionalInformation ?? ''}
-              data-testId='companyAddressAdditionalInformation' />
+              test-id='companyAddressAdditionalInformation' />
           </div>
         </div>
       </Container>
@@ -104,36 +104,36 @@ const CreateCompanyPage = () => {
             placeholder={translate('TAX_IDENTIFIER')}
             onChange={(e) => { setForm({ ...form, taxIdentifier: e.target.value }) }}
             value={maskCNPJ(form?.taxIdentifier ?? '')}
-            data-testId='companyTaxIdentier' />
+            test-id='companyTaxIdentier' />
           <Input
             placeholder={translate('NAME')}
             onChange={(e) => { setForm({ ...form, name: e.target.value }) }} value={form?.name ?? ''}
-            data-testId='companyName' />
+            test-id='companyName' />
           <Input
             placeholder={translate('FANTASY_NAME')}
             onChange={(e) => { setForm({ ...form, fantasyName: e.target.value }) }}
             value={form?.fantasyName ?? ''}
-            data-testId='companyFantasyName' />
+            test-id='companyFantasyName' />
           <Input
             placeholder={translate('PHONE')}
             onChange={(e) => { setForm({ ...form, phone: e.target.value }) }}
             value={maskPhone(form?.phone ?? '')}
-            data-testId='companyPhone' />
+            test-id='companyPhone' />
           <Input
             placeholder={translate('EMAIL')}
             onChange={(e) => { setForm({ ...form, email: e.target.value }) }}
             value={form?.email ?? ''}
-            data-testId='companyEmail' />
+            test-id='companyEmail' />
           <Input
             placeholder={translate('ADMIN_FIRST_NAME')}
             onChange={(e) => { setForm({ ...form, firstName: e.target.value }) }}
             value={form?.firstName ?? ''}
-            data-testId='companyAdminFirstName' />
+            test-id='companyAdminFirstName' />
           <Input
             placeholder={translate('ADMIN_LAST_NAME')}
             onChange={(e) => { setForm({ ...form, lastName: e.target.value }) }}
             value={form?.lastName ?? ''}
-            data-testId='companyAdminLastName' />
+            test-id='companyAdminLastName' />
         </div>
       </Container>
       <Container className='w-11/12 flex flex-col items-center p-10'>
@@ -145,20 +145,20 @@ const CreateCompanyPage = () => {
             placeholder={translate('LOGIN')}
             onChange={(e) => { setForm({ ...form, login: e.target.value }) }}
             value={form?.login ?? ''}
-            data-testId='companyLogin'
+            test-id='companyLogin'
           />
           <Input
             placeholder={translate('PASSWORD')}
             onChange={(e) => { setForm({ ...form, password: e.target.value }) }}
             value={form?.password ?? ''}
-            data-testId='companyPassword'
+            test-id='companyPassword'
             secret
           />
           <Input
             placeholder={translate('CONFIRM_PASSWORD')}
             onChange={(e) => { setPasswordConfirmation(e.target.value) }}
             value={passwordConfirmation ?? ''}
-            data-testId='companyConfirmPassword'
+            test-id='companyConfirmPassword'
             secret
           />
           <Select
@@ -170,7 +170,7 @@ const CreateCompanyPage = () => {
         </div>
       </Container>
       <div className="flex justify-evenly w-full my-12">
-        <Button type={'button'} data-testId='companyCreateConfirm' onClick={handleSubmit} value={translate('BUTTON_CONFIRM')} />
+        <Button type={'button'} test-id='companyCreateConfirm' onClick={handleSubmit} value={translate('BUTTON_CONFIRM')} />
         <Button type={'button'} onClick={handleCancel} value={translate('BUTTON_CANCEL')} buttonStyle={ButtonTypeEnum.OUTLINED} />
       </div>
     </div>

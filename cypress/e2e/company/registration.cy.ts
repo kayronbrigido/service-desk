@@ -4,40 +4,40 @@ describe('Company Registration', () => {
   it('should register company', () => {
     cy.visit('/')
 
-    cy.get('[data-testId="loginInput"]').type('admin@admin.com');
-    cy.get('[data-testId="passwordInput"]').type('123456');
-    cy.get('[data-testId="loginButton"]').click()
+    cy.get('[test-id="loginInput"]').type('admin@admin.com');
+    cy.get('[test-id="passwordInput"]').type('123456');
+    cy.get('[test-id="loginButton"]').click()
 
     cy.wait(2000)
 
-    cy.get('[data-testId="routeCreateCompany"]').click();
+    cy.get('[test-id="routeCreateCompany"]').click();
 
     cy.wait(2000)
 
     cy.fixture('companyRegister').then((company: ICreateCompanyPayload) => {
 
-      cy.get('[data-testId="companyAddressStreet"]').type(company.address?.street ?? '');
-      cy.get('[data-testId="companyAddressNumber"]').type(company.address?.number ?? '');
-      cy.get('[data-testId="companyAddressNeighborhood"]').type(company.address?.neighborhood ?? '');
-      cy.get('[data-testId="companyAddressCity"]').type(company.address?.city ?? '');
-      cy.get('[data-testId="companyAddressState"]').type(company.address?.state ?? '');
-      cy.get('[data-testId="companyAddressCountry"]').type(company.address?.country ?? '');
-      cy.get('[data-testId="companyAddressZipCode"]').type(company.address?.zipCode ?? '');
-      cy.get('[data-testId="companyAddressAdditionalInformation"]').type(company.address?.additionalInformation ?? '');
+      cy.get('[test-id="companyAddressStreet"]').type(company.address?.street ?? '');
+      cy.get('[test-id="companyAddressNumber"]').type(company.address?.number ?? '');
+      cy.get('[test-id="companyAddressNeighborhood"]').type(company.address?.neighborhood ?? '');
+      cy.get('[test-id="companyAddressCity"]').type(company.address?.city ?? '');
+      cy.get('[test-id="companyAddressState"]').type(company.address?.state ?? '');
+      cy.get('[test-id="companyAddressCountry"]').type(company.address?.country ?? '');
+      cy.get('[test-id="companyAddressZipCode"]').type(company.address?.zipCode ?? '');
+      cy.get('[test-id="companyAddressAdditionalInformation"]').type(company.address?.additionalInformation ?? '');
 
-      cy.get('[data-testId="companyTaxIdentier"]').type(company.taxIdentifier ?? '');
-      cy.get('[data-testId="companyName"]').type(company.name ?? '');
-      cy.get('[data-testId="companyFantasyName"]').type(company.fantasyName ?? '');
-      cy.get('[data-testId="companyPhone"]').type(company.phone ?? '');
-      cy.get('[data-testId="companyEmail"]').type(company.email ?? '');
-      cy.get('[data-testId="companyAdminFirstName"]').type(company.firstName ?? '');
-      cy.get('[data-testId="companyAdminLastName"]').type(company.lastName ?? '');
+      cy.get('[test-id="companyTaxIdentier"]').type(company.taxIdentifier ?? '');
+      cy.get('[test-id="companyName"]').type(company.name ?? '');
+      cy.get('[test-id="companyFantasyName"]').type(company.fantasyName ?? '');
+      cy.get('[test-id="companyPhone"]').type(company.phone ?? '');
+      cy.get('[test-id="companyEmail"]').type(company.email ?? '');
+      cy.get('[test-id="companyAdminFirstName"]').type(company.firstName ?? '');
+      cy.get('[test-id="companyAdminLastName"]').type(company.lastName ?? '');
 
-      cy.get('[data-testId="companyLogin"]').type(company.login ?? '');
-      cy.get('[data-testId="companyPassword"]').type(company.password ?? '');
-      cy.get('[data-testId="companyConfirmPassword"]').type(company.password ?? '');
-      cy.get('[data-testId="companyType"]').click();
-      cy.get('[data-testId="companyTypeOption3"]').click();
+      cy.get('[test-id="companyLogin"]').type(company.login ?? '');
+      cy.get('[test-id="companyPassword"]').type(company.password ?? '');
+      cy.get('[test-id="companyConfirmPassword"]').type(company.password ?? '');
+      cy.get('[test-id="companyType"]').click();
+      cy.get('[test-id="companyTypeOption3"]').click();
 
     })
   })

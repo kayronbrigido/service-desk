@@ -15,10 +15,11 @@ interface IInput {
 
 const Input = (props: IInput) => {
 
+  const { secret, ...restProps} = props;
   return (
     <div>
-      <input type={props.secret ? 'password' : 'text'}
-        {...props} 
+      <input type={secret ? 'password' : 'text'}
+        {...restProps} 
         className='rounded my-2 p-2 min-w-72 min-h-10'
         style={{
           backgroundColor: MainTheme.inputPrimaryColorBackground,

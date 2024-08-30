@@ -22,7 +22,7 @@ const LinkList = ({
       <p className="my-1">{title}</p>
       <ul className="mx-5">
         {routes.map((route) =>
-          <li key={route.path} data-testId={route.testId}><Link path={route.path}>{route.name}</Link></li>
+          <li key={route.path} test-id={route.testId}><Link path={route.path}>{route.name}</Link></li>
         )}
       </ul>
     </div>)

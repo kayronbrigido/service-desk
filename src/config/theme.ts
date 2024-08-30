@@ -9,4 +9,6 @@ export const MainTheme = {
   textPrimaryColor: '#FFFFFF',
   sidebarMenuColorBackground:'#071025',
   borderPrimaryColorBorder: '#0000FF',
+  rowEvenColor: '#2f2f2f',
+  rowOddColor: '#1d1d1d'
 }

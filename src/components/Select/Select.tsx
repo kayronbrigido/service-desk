@@ -27,7 +27,7 @@ const Select = ({ title, items, testId, onChange }: ISelectProps) => {
   };
 
   return (
-    <div className='rounded my-2 min-w-72 min-h-10' data-testId={testId}
+    <div className='rounded my-2 min-w-72 min-h-10' test-id={testId}
       onClick={() => setIsHide(!isHide)}
       style={{
         backgroundColor: MainTheme.inputPrimaryColorBackground,
@@ -39,7 +39,7 @@ const Select = ({ title, items, testId, onChange }: ISelectProps) => {
       <div className="flex flex-col content" style={{ position: 'absolute', zIndex: 99, display: isHide ? 'none' : 'flex' }}>
         {items.map((item) => (
           <span
-            data-testId={`${testId}Option${item.value}`}
+            test-id={`${testId}Option${item.value}`}
             onClick={() => handleChange(item.value)}
             className='rounded min-w-72 min-h-10 p-2'
             key={item.value}

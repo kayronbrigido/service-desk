@@ -9,6 +9,14 @@
       "COUNTRY": "País",
       "ZIP_CODE": "CEP",
       "ADDITIONAL_INFORMATION": "Complemento"
+    },
+    "COMPANY": {
+      "TAX_IDENTIFIER": "CNPJ",
+      "NAME": "Razão Social",
+      "FANTASY_NAME": "Nome fantasia",
+      "PHONE": "Telefone / Celular",
+      "EMAIL": "Email",
+      "COMPANY_TYPE": "Tipo de empresa"
     }
   },
   "PAGES": {
@@ -51,6 +59,9 @@
           "COMPANY_TYPE": "Tipo de empresa",
           "BUTTON_CONFIRM": "Criar",
           "BUTTON_CANCEL": "Limpar"
+        },
+        "LIST_COMPANY": {
+          "TITLE": "Empresas cadastradas"
         }
       }
     }
@@ -67,7 +78,8 @@
         "COMPLETED_TICKET": "Finalizados",
         "IN_PROGRESS_TICKET": "Em andamento",
         "CREATE_USER": "Adicionar Usuário",
-        "CREATE_COMPANY": "Adicionar Empresa"
+        "CREATE_COMPANY": "Adicionar Empresa",
+        "COMPANY_LIST": "Empresas Cadastradas"
       }
     }
   },

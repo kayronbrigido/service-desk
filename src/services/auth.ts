@@ -1,11 +1,10 @@
-import AuthAPI from '@src/endpoints/auth/auth';
 import { ICreateCompanyPayload, ICreateUserPayload } from '@src/models/auth';
-import RolesAPI from '@src/endpoints/roles/roles';
 import { RolesEnum, SessionStorageKey } from '@src/models/enums';
-import { setAuthenticated } from '@src/store/slicers/authSlice'
-import UserAPI from '@src/endpoints/users/users';
+import AuthAPI from '@src/endpoints/auth/auth';
 import CompanyAPI from '@src/endpoints/companies/companies';
-import Toasty from './toast';
+import Toasty from '../utils/toast';
+import UserAPI from '@src/endpoints/users/users';
+import { setAuthenticated } from '@src/store/slicers/authSlice'
 
 
 const AuthService = {

@@ -47,13 +47,13 @@ export default function LoginPage() {
     <main className='flex flex-col justify-center justify-items-center items-center w100 h-screen'>
       <h1>Login</h1>
       <Input 
-        data-testId='loginInput'
+        test-id='loginInput'
         value={form?.login} 
         placeholder={translate('LOGIN')} 
         name={translate('LOGIN')} 
         onChange={(e) => setForm({...form, login: e.target.value})}/>
       <Input 
-        data-testId='passwordInput'
+        test-id='passwordInput'
         value={form?.password} 
         secret
         placeholder={translate('PASSWORD')} 
@@ -61,7 +61,7 @@ export default function LoginPage() {
         onChange={(e) => setForm({...form, password: e.target.value})}
       />
       <Button 
-        data-testId='loginButton'
+        test-id='loginButton'
         type='button' 
         value={translate('LOGIN_BUTTON')} 
         style={{textTransform: 'capitalize'}} 
