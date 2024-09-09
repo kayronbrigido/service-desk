@@ -11,7 +11,10 @@
     "cypress:run": "cypress run"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.4.0",
+    "@ant-design/nextjs-registry": "^1.0.1",
     "@reduxjs/toolkit": "^2.2.6",
+    "antd": "^5.20.4",
     "firebase": "^10.12.2",
     "firebase-admin": "^12.2.0",
     "next": "14.2.4",

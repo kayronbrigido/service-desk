@@ -1,7 +1,12 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { ICompanyData } from '@src/models/company';
 
 export interface ICompanyState {
-  companies: [] | null,
+  companies: {
+    data: ICompanyData[] | null,
+    currentPage: number | null,
+    totalPages: number | null
+  } | null,
 }
 
 const initialState: ICompanyState = {

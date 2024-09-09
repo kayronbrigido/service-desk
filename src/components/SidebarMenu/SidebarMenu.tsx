@@ -26,7 +26,7 @@ const SidebarMenu = () => {
   ]
   
   return(
-    <div className='flex flex-col w-60 h-screen mr-16 px-3 min-w-52 fixed items-center' style={{
+    <div className='flex flex-col w-60 h-screen mr-16 px-3 min-w-52 fixed' style={{
       backgroundColor: MainTheme.sidebarMenuColorBackground,
       borderRightWidth: 1,
       borderRightColor: MainTheme.borderPrimaryColorBorder

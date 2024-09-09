@@ -1,6 +1,12 @@
 {
   "extends": "next/core-web-vitals",
+  "plugins": ["prettier"],
   "rules": {
+    "prettier/prettier": ["warn", {
+      "singleQuote": true,
+      "tabWidth": 2,
+      "trailingComma": "es5"
+    }],
     "quotes": ["warn", "single"],
     "indent": ["warn", 2],
     "sort-imports": "error",
