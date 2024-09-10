@@ -71,7 +71,8 @@
       "TITLE": {
         "TICKETS": "Chamados",
         "USERS": "Usuários",
-        "COMPANY": "Empresa"
+        "COMPANY": "Empresa",
+        "SIGNOUT": "Sair"
       },
       "ROUTES": {
         "OPEN_TICKET": "Abertos",

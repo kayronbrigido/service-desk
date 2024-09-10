@@ -1,4 +1,4 @@
-import { addDoc, collection, getDocs,  limit,  orderBy, query, startAt, startAfter } from 'firebase/firestore';
+import { addDoc, collection, getDocs,  limit,  orderBy, query, startAfter } from 'firebase/firestore';
 import { ICreateCompanyPayload } from '@src/models/auth';
 import { ISearchParamsCompany } from '@src/models/searchParams';
 import { dataBase } from '@src/config/firebaseService'

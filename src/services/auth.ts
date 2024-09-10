@@ -5,6 +5,7 @@ import CompanyAPI from '@src/endpoints/companies/companies';
 import Toasty from '../utils/toast';
 import UserAPI from '@src/endpoints/users/users';
 import { setAuthenticated } from '@src/store/slicers/authSlice'
+import UserService from './user';
 
 
 const AuthService = {
@@ -12,6 +13,8 @@ const AuthService = {
     try{
       const { user } = await AuthAPI.signin(login, password);
       const idToken = await user.getIdToken()
+
+      dispatch(UserService.getLoggedUser(user.uid));
 
       sessionStorage.setItem(SessionStorageKey.ACCESS_TOKEN, idToken)
 
@@ -21,6 +24,11 @@ const AuthService = {
       Toasty.error('INVALID_CREDENTIALS');
       callback(e as Error)
     }
+  },
+
+  signout: () => {
+    sessionStorage.clear();
+    window.location.reload();
   },
 
   createUser: (

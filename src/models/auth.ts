@@ -4,11 +4,14 @@ export interface IAuthResponse {
 
 }
 
-export interface ICreateLogin {
-  login?: string,
-  password?: string,
+export interface IUserData {
   firstName?: string,
   lastName?: string,
+  login?: string,
+}
+
+export interface ICreateLogin extends IUserData {
+  password?: string,
 }
 
 export interface IAddress {
