@@ -8,6 +8,8 @@ export interface IUserData {
   firstName?: string,
   lastName?: string,
   login?: string,
+  role?: RolesEnum,
+  companyId?: string
 }
 
 export interface ICreateLogin extends IUserData {

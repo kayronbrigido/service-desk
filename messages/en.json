@@ -9,6 +9,14 @@
       "COUNTRY": "Country",
       "ZIP_CODE": "ZIP Code",
       "ADDITIONAL_INFORMATION": "Additional Information"
+    },
+    "COMPANY": {
+      "TAX_IDENTIFIER": "Tax Identifier",
+      "NAME": "Company Name",
+      "FANTASY_NAME": "Trade Name",
+      "PHONE": "Phone / Mobile",
+      "EMAIL": "Email",
+      "COMPANY_TYPE": "Company Type"
     }
   },
   "PAGES": {
@@ -51,6 +59,9 @@
           "COMPANY_TYPE": "Company Type",
           "BUTTON_CONFIRM": "Create",
           "BUTTON_CANCEL": "Clear"
+        },
+        "LIST_COMPANY": {
+          "TITLE": "Registered Companies"
         }
       }
     }
@@ -60,14 +71,16 @@
       "TITLE": {
         "TICKETS": "Tickets",
         "USERS": "Users",
-        "COMPANY": "Company"
+        "COMPANY": "Company",
+        "SIGN_OUT": "Sign out"
       },
       "ROUTES": {
         "OPEN_TICKET": "Open",
         "COMPLETED_TICKET": "Completed",
         "IN_PROGRESS_TICKET": "In Progress",
         "CREATE_USER": "Add User",
-        "CREATE_COMPANY": "Add Company"
+        "CREATE_COMPANY": "Add Company",
+        "COMPANY_LIST": "Registered Companies"
       }
     }
   },
@@ -75,12 +88,23 @@
     "ROLES": {
       "1": "Super Admin",
       "2": "Admin",
-      "3": "Operator"
+      "3": "Operator",
+      "4": "Support"
     },
     "COMPANIES_TYPES": {
       "1": "Support",
       "2": "Standard",
       "3": "Both"
     }
+  },
+  "ERRORS": {
+    "CREATE_COMPANY_ERROR": "Error creating company",
+    "CREATE_USER_ERROR": "Error creating user",
+    "INVALID_CREDENTIALS": "Invalid credentials",
+    "EMAIL_ALREADY_IN_USE": "Email is already in use"
+  },
+  "SUCCESS_MESSAGES": {
+    "CREATE_COMPANY": "Company created successfully",
+    "CREATE_USER": "User created successfully"
   }
 }

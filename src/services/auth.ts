@@ -75,6 +75,7 @@ const AuthService = {
 
       const user = await UserAPI.createUser(userAuth.uid, userData)
       await CompanyAPI.createCompany(userAuth.uid, {...companyPayload, userId: user.id})
+      await UserAPI.updateUser(userAuth.uid, userData)
 
       //dispatch();
       Toasty.success('CREATE_COMPANY');

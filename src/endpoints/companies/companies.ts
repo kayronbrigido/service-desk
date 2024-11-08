@@ -27,7 +27,7 @@ const getCompanies = async (searchParams?: ISearchParamsCompany) => {
   const queryRef = query(
     collection(dataBase, 'company'),
     orderBy(searchParams?.orderBy ?? 'name', searchParams?.sortBy ?? 'asc'),
-    limit(3),
+    limit(pageLimit),
     startAfter(pageOffset),
   );
 
@@ -39,7 +39,7 @@ const getCompanies = async (searchParams?: ISearchParamsCompany) => {
 
   return {
     data: response,
-    totalPages: Number(totalPages),
+    totalPages: Number(totalPages) > 0 ? Number(totalPages) : 1,
     currentPage: currentPage
   };
 }

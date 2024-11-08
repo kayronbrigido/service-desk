@@ -1,6 +1,7 @@
-import { addDoc, collection, getDocs, query, where } from 'firebase/firestore';
+import { addDoc, collection, doc, getDocs, query, updateDoc, where } from 'firebase/firestore';
 import { ICreateUserPayload, IUserData } from '@src/models/auth';
 import { dataBase } from '@src/config/firebaseService'
+import { update } from 'firebase/database';
 
 const createUser = async (userAuthId: string, userData: ICreateUserPayload) => {
 
@@ -31,9 +32,16 @@ const getUserByAuthId = async (userAuthId: string): Promise<IUserData> => {
 
 }
 
+const updateUser = async (userId: string, userData: IUserData) => {
+  const snapshot = await updateDoc(doc(dataBase, 'users', userId), {...userData})
+
+  return snapshot;
+}
+
 const UserAPI = {
   createUser,
-  getUserByAuthId
+  getUserByAuthId,
+  updateUser
 }
 
 export default UserAPI;

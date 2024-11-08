@@ -27,17 +27,24 @@ const CreatUserPage = () => {
 
   const translateEnum = useTranslations('ENUMS.ROLES');
   const translate = useTranslations('PAGES.DASHBOARD.USERS.CREATE_USER');
-  const roles = Object
-    .values(RolesEnum)
-    .filter(key => isNaN(Number(RolesEnum[key])))
-    .map((role) => ({
-      name: translateEnum(role),
-      value: role
-    }))
+  const roles = [
+    {
+      name: translateEnum(RolesEnum.ADMIN.toString()),
+      value: RolesEnum.ADMIN
+    },
+    {
+      name: translateEnum(RolesEnum.SUPPORT.toString()),
+      value: RolesEnum.SUPPORT
+    },
+    {
+      name: translateEnum(RolesEnum.OPPERATOR.toString()),
+      value: RolesEnum.OPPERATOR
+    },
+  ]
 
   return (
-    <div className='w-full h-full m-16 flex flex-col content-center align-center items-center justify-items-center'>
-      <Container className='flex flex-col w-full p-10 content-center align-center items-center'>
+    <div className='w-full h-full my-16 flex flex-col content-center align-center items-center justify-items-center'>
+      <Container className='w-11/12 flex flex-col items-center p-10'>
         <h1>{translate('TITLE')}</h1>
         <h2>{translate('DESCRIPTION')}</h2>
         <div className='flex justify-evenly align-center w-full my-8'>

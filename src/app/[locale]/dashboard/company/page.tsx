@@ -9,7 +9,7 @@ import { useTranslations } from 'next-intl';
 import { ICompanyData } from '@src/models/company';
 
 const initalQuery: ISearchParamsCompany = {
-  limit: 2,
+  limit: 30,
   orderBy: 'name',
   offset: '0',
 }

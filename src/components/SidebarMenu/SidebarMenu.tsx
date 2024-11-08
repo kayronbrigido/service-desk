@@ -4,6 +4,8 @@ import { MainTheme } from '@src/config/theme';
 import AuthService from '@src/services/auth';
 import { Routes } from '@src/utils/navigation';
 import { useTranslations } from 'next-intl';
+import { hasAccess } from '@src/utils/access';
+import { RolesEnum } from '@src/models/enums';
 
 
 
@@ -34,11 +36,11 @@ const SidebarMenu = () => {
       borderRightWidth: 1,
       borderRightColor: MainTheme.borderPrimaryColorBorder
     }}>
-      <h1>{loggedUser?.firstName}</h1>
-      <LinkList title={translate('TITLE.TICKETS')} routes={ticketsRoutes} className='mb-6'/>
-      <LinkList title={translate('TITLE.USERS')} routes={usersRoutes} className='mb-6' />
-      <LinkList title={translate('TITLE.COMPANY')} routes={companyRoutes} className='mb-6' />
-      <input type='button' onClick={AuthService.signout} value={translate('TITLE.SIGNOUT')} />
+      <h1 className='flex justify-center'>{loggedUser?.firstName} {loggedUser?.lastName}</h1>
+      {loggedUser?.role && hasAccess(loggedUser?.role, [RolesEnum.OPPERATOR, RolesEnum.SUPPORT, RolesEnum.ADMIN, RolesEnum.SUPER_ADMIN]) && <LinkList title={translate('TITLE.TICKETS')} routes={ticketsRoutes} className='mb-6'/>}
+      {loggedUser?.role && hasAccess(loggedUser?.role, [RolesEnum.ADMIN, RolesEnum.SUPER_ADMIN]) && <LinkList title={translate('TITLE.USERS')} routes={usersRoutes} className='mb-6' />}
+      {loggedUser?.role && hasAccess(loggedUser?.role, [RolesEnum.SUPER_ADMIN]) && (<LinkList title={translate('TITLE.COMPANY')} routes={companyRoutes} className='mb-6' />)}
+      <input type='button' onClick={AuthService.signout} value={translate('TITLE.SIGN_OUT')} />
     </div>
   )
 }

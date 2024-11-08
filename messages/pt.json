@@ -72,7 +72,7 @@
         "TICKETS": "Chamados",
         "USERS": "Usuários",
         "COMPANY": "Empresa",
-        "SIGNOUT": "Sair"
+        "SIGN_OUT": "Sair"
       },
       "ROUTES": {
         "OPEN_TICKET": "Abertos",
@@ -88,7 +88,8 @@
     "ROLES": {
       "1": "Super Admin",
       "2": "Admin",
-      "3": "Operador"
+      "3": "Operador",
+      "4": "Suporte"
     },
     "COMPANIES_TYPES": {
       "1": "Suporte",
