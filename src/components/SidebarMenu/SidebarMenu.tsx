@@ -15,6 +15,7 @@ const SidebarMenu = () => {
   const { loggedUser } = useAppSelector((state) => state.user)
 
   const ticketsRoutes = [
+    {path: Routes.TICKETS_CREATE, name: translate('ROUTES.NEW_TICKET'), testId: 'routeOpenTicket'},
     {path: Routes.TICKETS_OPEN, name: translate('ROUTES.OPEN_TICKET'), testId: 'routeOpenTicket'},
     {path: Routes.TICKETS_IN_PROGRESS, name: translate('ROUTES.IN_PROGRESS_TICKET'), testId: 'routeTicketInProgress'},
     {path: Routes.TICKETS_COMPLETED, name: translate('ROUTES.COMPLETED_TICKET'), testId: 'routeCompletedTicket'},    

@@ -26,6 +26,18 @@
       "LOGIN_BUTTON": "Entrar"
     },
     "DASHBOARD": {
+      "TICKETS": {
+        "CREATE_TICKET": {
+          "TITLE": "Abrir um novo chamado",
+          "DESCRIPTION": "novo chamado",
+          "TICKET_COMPANY_NAME": "Empresa",
+          "TICKET_TITLE": "Título",
+          "TICKET_DESCRIPTION": "Descrição do ticket",
+          "CREATE": "Criar",
+          "SEARCH": "Buscar",
+          "CLEAR": "Limpar"
+        }
+      },
       "USERS": {
         "CREATE_USER": {
           "TITLE": "Adicionar Usuário",
@@ -61,7 +73,8 @@
           "BUTTON_CANCEL": "Limpar"
         },
         "LIST_COMPANY": {
-          "TITLE": "Empresas cadastradas"
+          "TITLE": "Empresas cadastradas",
+          "DESCRIPTION": "Listagem de empresas cadastradas"
         }
       }
     }
@@ -75,6 +88,7 @@
         "SIGN_OUT": "Sair"
       },
       "ROUTES": {
+        "NEW_TICKET": "Novo chamado",
         "OPEN_TICKET": "Abertos",
         "COMPLETED_TICKET": "Finalizados",
         "IN_PROGRESS_TICKET": "Em andamento",
@@ -101,7 +115,8 @@
     "CREATE_COMPANY_ERROR": "Erro ao criar empresa",
     "CREATE_USER_ERROR": "Erro ao criar usuário",
     "INVALID_CREDENTIALS": "Credenciais inválidas",
-    "EMAIL_ALREADY_IN_USE": "Email já esta sendo usado"
+    "EMAIL_ALREADY_IN_USE": "Email já esta sendo usado",
+    "WITHOUT_PERMISSION": "Usuário sem permissão para realizar esta ação"
   },
   "SUCCESS_MESSAGES": {
     "CREATE_COMPANY": "Empresa criada com sucesso",

@@ -10,7 +10,7 @@ export interface ICompanyData {
   street?: string;
   zipCode?: string;
   email?: string;
-  fantasyName?: string;
+  tradeName?: string;
   id?: string;
   name?: string;
   phone?: string;

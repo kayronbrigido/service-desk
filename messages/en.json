@@ -26,6 +26,18 @@
       "LOGIN_BUTTON": "Login"
     },
     "DASHBOARD": {
+      "TICKETS": {
+        "CREATE_TICKET": {
+          "TITLE": "Open a new ticket",
+          "DESCRIPTION": "New ticket",
+          "TICKET_COMPANY_NAME": "Company",
+          "TICKET_TITLE": "Title",
+          "TICKET_DESCRIPTION": "Ticket description",
+          "CREATE": "Create",
+          "SEARCH": "Search",
+          "CLEAR": "Clear"
+        }
+      },
       "USERS": {
         "CREATE_USER": {
           "TITLE": "Add User",
@@ -61,7 +73,8 @@
           "BUTTON_CANCEL": "Clear"
         },
         "LIST_COMPANY": {
-          "TITLE": "Registered Companies"
+          "TITLE": "Registered Companies",
+          "DESCRIPTION": "List of registered companies"
         }
       }
     }
@@ -75,6 +88,7 @@
         "SIGN_OUT": "Sign out"
       },
       "ROUTES": {
+        "NEW_TICKET": "New ticket",
         "OPEN_TICKET": "Open",
         "COMPLETED_TICKET": "Completed",
         "IN_PROGRESS_TICKET": "In Progress",
@@ -101,7 +115,8 @@
     "CREATE_COMPANY_ERROR": "Error creating company",
     "CREATE_USER_ERROR": "Error creating user",
     "INVALID_CREDENTIALS": "Invalid credentials",
-    "EMAIL_ALREADY_IN_USE": "Email is already in use"
+    "EMAIL_ALREADY_IN_USE": "Email is already in use",
+    "WITHOUT_PERMISSION": "User does not have permission to perform this action"
   },
   "SUCCESS_MESSAGES": {
     "CREATE_COMPANY": "Company created successfully",

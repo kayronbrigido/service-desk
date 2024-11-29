@@ -12,6 +12,10 @@ export interface IUserData {
   companyId?: string
 }
 
+export interface ILoggerUserData extends IUserData {
+  id?: string
+}
+
 export interface ICreateLogin extends IUserData {
   password?: string,
 }
@@ -29,12 +33,13 @@ export interface IAddress {
 
 export interface ICreateUserPayload extends ICreateLogin {
   role?: RolesEnum
+  companyId?: string,
 }
 
 export interface ICreateCompanyPayload extends ICreateLogin {
   taxIdentifier?: string,
   name?: string,
-  fantasyName?: string,
+  tradeName?: string,
   phone?: string,
   email?: string,
   address?: IAddress,

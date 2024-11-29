@@ -1,6 +1,6 @@
 'use client'
 
-import { Container, DataTable } from '@src/components';
+import { Container, DataTable, HeaderTitle } from '@src/components';
 import { useAppDispatch, useAppSelector } from '@src/hooks/useRedux';
 import { useEffect, useState, useMemo } from 'react';
 import CompanyService from '@src/services/company';
@@ -29,7 +29,7 @@ const ListCompaniesPage = () => {
       name: translateCompanyData('NAME'),
     },
     {
-      field: 'fantasyName',
+      field: 'tradeName',
       name: translateCompanyData('FANTASY_NAME'),
     },
     {
@@ -82,9 +82,7 @@ const ListCompaniesPage = () => {
 
   return (
     <div className='w-full h-full my-16 flex flex-col items-center'>
-      <div className="flex-start w-11/12 mb-6">
-        <h1>{translate('TITLE')} {loading ? 'sim' : 'não'}</h1>
-      </div>
+      <HeaderTitle title={translate('TITLE')} description={translate('DESCRIPTION')} />
       <Container className='w-11/12 flex flex-col items-center p-10'>
         <DataTable
           collumns={collumns}

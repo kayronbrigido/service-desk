@@ -16,3 +16,13 @@ export enum CompaniesType {
   COMMON = 2,
   BOTH = 3
 }
+
+export enum Collections {
+  COMPANY = 'company',
+  USER = 'user',
+  TICKET = 'ticket' 
+}
+
+export enum ErrosCode {
+  WITHOUT_PERMISSION = 'WITHOUT_PERMISSION',
+}

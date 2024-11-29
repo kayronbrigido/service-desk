@@ -1,13 +1,19 @@
 import { addDoc, collection, doc, getDocs, query, updateDoc, where } from 'firebase/firestore';
 import { ICreateUserPayload, IUserData } from '@src/models/auth';
 import { dataBase } from '@src/config/firebaseService'
-import { update } from 'firebase/database';
+import { Collections } from '@src/models/enums';
+
+const THIS_COLLECTION = Collections.USER;
+
+const addRoleToUser = async (userId: string, role: number) => {
+  await addDoc(collection(dataBase, THIS_COLLECTION), {userAuthId: userId, role: role})
+};
 
 const createUser = async (userAuthId: string, userData: ICreateUserPayload) => {
 
   delete userData.password
 
-  const response = await addDoc(collection(dataBase, 'user'), {
+  const response = await addDoc(collection(dataBase, THIS_COLLECTION), {
     userAuthId: userAuthId, ...userData
   })
 
@@ -17,7 +23,7 @@ const createUser = async (userAuthId: string, userData: ICreateUserPayload) => {
 const getUserByAuthId = async (userAuthId: string): Promise<IUserData> => {
   const snapshot = await getDocs(
     query(
-      collection(dataBase, 'user'),
+      collection(dataBase, THIS_COLLECTION),
       where('userAuthId', '==', userAuthId)
     )
   )
@@ -33,7 +39,7 @@ const getUserByAuthId = async (userAuthId: string): Promise<IUserData> => {
 }
 
 const updateUser = async (userId: string, userData: IUserData) => {
-  const snapshot = await updateDoc(doc(dataBase, 'users', userId), {...userData})
+  const snapshot = await updateDoc(doc(dataBase, THIS_COLLECTION, userId), {...userData})
 
   return snapshot;
 }
@@ -41,7 +47,8 @@ const updateUser = async (userId: string, userData: IUserData) => {
 const UserAPI = {
   createUser,
   getUserByAuthId,
-  updateUser
+  updateUser,
+  addRoleToUser
 }
 
 export default UserAPI;

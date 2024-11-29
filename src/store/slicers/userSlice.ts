@@ -1,8 +1,8 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { IUserData } from "@src/models/auth";
+import { ILoggerUserData } from "@src/models/auth";
 
 interface IUserState {
-  loggedUser: null | IUserData
+  loggedUser: null | ILoggerUserData
 }
 
 const initialState: IUserState = {
@@ -13,7 +13,7 @@ const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    setLoggedUser: (state, action: PayloadAction<IUserData>) => {
+    setLoggedUser: (state, action: PayloadAction<ILoggerUserData>) => {
       state.loggedUser = action.payload
     }
   }

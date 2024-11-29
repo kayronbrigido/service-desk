@@ -1,12 +1,14 @@
 'use client'
 
-import { Button, Container, Input, Select } from '@src/components';
+import { Button, Container, HeaderTitle, Input, Select } from '@src/components';
 import AuthService from '@src/services/auth';
 import { ICreateUserPayload } from '@src/models/auth';
-import { RolesEnum } from '@src/models/enums';
-import { useAppDispatch } from '@src/hooks/useRedux';
-import { useState } from 'react';
+import { ErrosCode, RolesEnum } from '@src/models/enums';
+import { useAppDispatch, useAppSelector } from '@src/hooks/useRedux';
+import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import Error from 'next/error';
+import Toasty from '@src/utils/toast';
 
 const initialValues: ICreateUserPayload = {
   login: '',
@@ -20,8 +22,15 @@ const initialValues: ICreateUserPayload = {
 const CreatUserPage = () => {
   const [form, setForm] = useState<ICreateUserPayload>(initialValues)
   const dispatch = useAppDispatch();
+  const { loggedUser} = useAppSelector((state) => state.user)
 
+  useEffect(() => { 
+    setForm({...form, companyId: loggedUser?.companyId ?? ''})
+  }, [])
   const handleCreateUser = () => {
+    if(loggedUser?.role != RolesEnum.SUPPORT) {
+      Toasty.error(ErrosCode.WITHOUT_PERMISSION);
+    }
     dispatch(AuthService.createUser(form))
   }
 
@@ -44,9 +53,8 @@ const CreatUserPage = () => {
 
   return (
     <div className='w-full h-full my-16 flex flex-col content-center align-center items-center justify-items-center'>
+      <HeaderTitle title={translate('TITLE')} description={translate('DESCRIPTION')} />
       <Container className='w-11/12 flex flex-col items-center p-10'>
-        <h1>{translate('TITLE')}</h1>
-        <h2>{translate('DESCRIPTION')}</h2>
         <div className='flex justify-evenly align-center w-full my-8'>
           <div>
             <Input value={form?.login}

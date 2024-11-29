@@ -2,7 +2,8 @@
 
 export enum Routes {
   CREATE_USER = 'dashboard/users/create',
-  TICKETS_OPEN = 'dashboard/tickets/open', 
+  TICKETS_CREATE = 'dashboard/tickets/create',
+  TICKETS_OPEN = 'dashboard/tickets/open',
   TICKETS_COMPLETED = 'dashboard/tickets/completed', 
   TICKETS_IN_PROGRESS = 'dashboard/tickets/in-progress',
   CREATE_COMPANY = 'dashboard/company/create',

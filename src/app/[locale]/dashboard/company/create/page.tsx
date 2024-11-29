@@ -1,6 +1,6 @@
 'use client'
 
-import { Button, Container, Input, Select } from '@src/components';
+import { Button, Container, HeaderTitle, Input, Select } from '@src/components';
 import { maskCEP, maskCNPJ, maskPhone } from '@src/utils/masks';
 import AuthService from '@src/services/auth';
 import { ButtonTypeEnum } from '@src/components/Button/Button';
@@ -49,10 +49,7 @@ const CreateCompanyPage = () => {
 
   return (
     <div className='w-full h-full my-16 flex flex-col items-center'>
-      <div className="flex-start w-11/12 mb-6">
-        <h1>{translate('TITLE')}</h1>
-        <p>{translate('DESCRIPTION')}</p>
-      </div>
+      <HeaderTitle title={translate('TITLE')} description={translate('DESCRIPTION')} />
       <Container className='w-11/12 flex flex-col items-center p-10'>
         <div className="mb-8 flex flex-col w-full items-center">
           <h1>{translate('ADDRESS_INFO')}</h1>
@@ -111,9 +108,9 @@ const CreateCompanyPage = () => {
             test-id='companyName' />
           <Input
             placeholder={translate('FANTASY_NAME')}
-            onChange={(e) => { setForm({ ...form, fantasyName: e.target.value }) }}
-            value={form?.fantasyName ?? ''}
-            test-id='companyFantasyName' />
+            onChange={(e) => { setForm({ ...form, tradeName: e.target.value }) }}
+            value={form?.tradeName ?? ''}
+            test-id='companyTradeName' />
           <Input
             placeholder={translate('PHONE')}
             onChange={(e) => { setForm({ ...form, phone: e.target.value }) }}

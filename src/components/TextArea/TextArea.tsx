@@ -1,36 +1,30 @@
 import { ChangeEventHandler } from 'react';
 import { MainTheme } from '@src/config/theme';
 
-interface IInput {
+interface ITextArea {
   alt?: string;
   maxLength?: number;
   multiple?: boolean;
   placeholder?: string;
   required?: boolean;
   onChange: ChangeEventHandler<T>;
-  onClick?: () => void;
   value: string | readonly string[] | number;
   name?: string
-  secret?: boolean
-  divClassName?: string;
-  inputClassName?: string
+  className?: string
 } 
 
-const Input = (props: IInput) => {
-
-  const { secret, divClassName, inputClassName, onClick, ...restProps} = props;
+const TextArea = (props: ITextArea) => {
+  const { className, ...rest} = props;
   return (
-    <div className={divClassName} onClick={onClick}>
-      <input type={secret ? 'password' : 'text'}
-        {...restProps} 
-        className={`rounded my-2 p-2 min-w-72 min-h-10 ${inputClassName}`}
+      <textarea 
+        className={`rounded my-2 p-2 min-w-72 min-h-10 ${className}`}
         style={{
           backgroundColor: MainTheme.inputPrimaryColorBackground,
           color: MainTheme.inputPrimaryColorText
         }}
+        {...rest} 
       />
-    </div>
   )
 }
 
-export default Input;
+export default TextArea;

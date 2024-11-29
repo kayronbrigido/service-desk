@@ -1,3 +1,5 @@
+import { CompaniesType } from "./enums"
+
 export interface ISearchParamsBase {
   limit?: number,
   orderBy?: string,
@@ -10,5 +12,5 @@ export interface ISearchParamsCompany extends ISearchParamsBase{
   name?: string,
   email?: string,
   taxIdentifier?: string,
-  type?: string
+  type?: string | CompaniesType | CompaniesType[]
 }

@@ -1,7 +1,7 @@
 {
   "taxIdentifier": "12345678000190",
   "name": "End to End Test Ltda",
-  "fantasyName": "E2E Fantasy Name",
+  "tradeName": "E2E Fantasy Name",
   "phone": "11987654321",
   "email": "contact@e2e.com",
   "address": {

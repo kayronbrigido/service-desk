@@ -27,7 +27,7 @@ describe('Company Registration', () => {
 
       cy.get('[test-id="companyTaxIdentier"]').type(company.taxIdentifier ?? '');
       cy.get('[test-id="companyName"]').type(company.name ?? '');
-      cy.get('[test-id="companyFantasyName"]').type(company.fantasyName ?? '');
+      cy.get('[test-id="companyTradeName"]').type(company.tradeName ?? '');
       cy.get('[test-id="companyPhone"]').type(company.phone ?? '');
       cy.get('[test-id="companyEmail"]').type(company.email ?? '');
       cy.get('[test-id="companyAdminFirstName"]').type(company.firstName ?? '');

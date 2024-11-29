@@ -2,7 +2,7 @@
   {
     "taxIdentifier": "98765432000195",
     "name": "Tech Innovations Inc.",
-    "fantasyName": "TechInnovate",
+    "tradeName": "TechInnovate",
     "phone": "21987654321",
     "email": "info@techinnovate.com",
     "address": {
@@ -24,7 +24,7 @@
   {
     "taxIdentifier": "11223344000122",
     "name": "Creative Solutions Ltd.",
-    "fantasyName": "CreativeSol",
+    "tradeName": "CreativeSol",
     "phone": "31987654321",
     "email": "support@creativesol.com",
     "address": {
@@ -46,7 +46,7 @@
   {
     "taxIdentifier": "22334455000133",
     "name": "Future Tech Ltda",
-    "fantasyName": "FutureTech",
+    "tradeName": "FutureTech",
     "phone": "41987654321",
     "email": "contact@futuretech.com",
     "address": {
@@ -68,7 +68,7 @@
   {
     "taxIdentifier": "33445566000144",
     "name": "Global Enterprises Ltd.",
-    "fantasyName": "GlobalEnter",
+    "tradeName": "GlobalEnter",
     "phone": "61987654321",
     "email": "contact@globalenter.com",
     "address": {
@@ -90,7 +90,7 @@
   {
     "taxIdentifier": "44556677000155",
     "name": "Innovative Systems Ltd.",
-    "fantasyName": "InnovSystems",
+    "tradeName": "InnovSystems",
     "phone": "31987654321",
     "email": "info@innovsystems.com",
     "address": {
