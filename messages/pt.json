@@ -116,7 +116,8 @@
     "CREATE_USER_ERROR": "Erro ao criar usuário",
     "INVALID_CREDENTIALS": "Credenciais inválidas",
     "EMAIL_ALREADY_IN_USE": "Email já esta sendo usado",
-    "WITHOUT_PERMISSION": "Usuário sem permissão para realizar esta ação"
+    "WITHOUT_PERMISSION": "Usuário sem permissão para realizar esta ação",
+    "WEAK_PASSWORD": "A senha deve ter pelo menos 6 caracteres"
   },
   "SUCCESS_MESSAGES": {
     "CREATE_COMPANY": "Empresa criada com sucesso",

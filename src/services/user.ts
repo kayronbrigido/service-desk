@@ -9,7 +9,6 @@ const UserService = {
     try{
       const payload = await UserAPI.getUserByAuthId(userAuthId)
 
-      console.log(payload)
       dispatch(setLoggedUser(payload))
 
     } finally {

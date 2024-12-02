@@ -36,9 +36,6 @@ const getCompanies = async (searchParams?: ISearchParamsCompany) => {
     startAfter(pageOffset),
   );
 
-  console.log(searchParams)
-  
-
   if (searchParams?.type) {
     queryRef = query(
       queryRef,
@@ -59,14 +56,12 @@ const getCompanies = async (searchParams?: ISearchParamsCompany) => {
   const totalPages = String(totalDocuments / pageLimit).split('.')[0];
   const currentPage = Math.floor(Number(pageOffset) / pageLimit) + 1;
 
-  console.log('response' ,response)
   return {
     data: response,
     totalPages: Number(totalPages) > 0 ? Number(totalPages) : 1,
     currentPage: currentPage
   };
 } catch(e) {
-  console.log('erro',e)
 
   return {
     data: [],

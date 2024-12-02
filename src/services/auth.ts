@@ -66,6 +66,7 @@ const AuthService = {
       try {
 
         const userCreated = await AuthAPI.createUser(companyData.login as string, companyData.password as string);
+
         userAuth = userCreated.user
 
         delete companyData.password
@@ -80,17 +81,21 @@ const AuthService = {
         }
 
         const user = await UserAPI.createUser(userAuth.uid, userData)
+
         const { id } = await CompanyAPI.createCompany(userAuth.uid, { ...companyPayload, userId: user.id })
-        await UserAPI.updateUser(userAuth.uid, { ...userData, companyId: id })
+
+        await UserAPI.updateUser(user.id, { ...userData, companyId: id })
+
 
         //dispatch();
         Toasty.success('CREATE_COMPANY');
         callback(null)
       } catch (error) {
-        if (error?.message?.includes('email-already-in-use')) {
+
+        if (error instanceof Error && error?.message?.includes('email-already-in-use')) {
           Toasty.error('EMAIL_ALREADY_IN_USE');
         } else {
-          Toasty.error('CREATE_COMPANY')
+          Toasty.error('CREATE_COMPANY_ERROR')
         }
         callback(error as Error)
       } finally {
