@@ -1,0 +1,3 @@
+export enum DeletedBySystem {
+  CREATE_ACCOUNT_SERVICE = 'CREATE_ACCOUNT_SERVICE',
+}
