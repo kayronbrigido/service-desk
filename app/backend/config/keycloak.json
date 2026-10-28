@@ -7,6 +7,8 @@
     {
       "username": "admin",
       "enabled": true,
+      "firstName": "Admin",
+      "lastName": "Develop",
       "email": "email@email.com",
       "emailVerified": true,
       "credentials": [

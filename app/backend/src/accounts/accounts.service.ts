@@ -10,6 +10,7 @@ import { AppException } from 'src/common/exceptions/app.exceptions';
 import { normalizeError } from 'src/common/utils/normalize';
 import { ErrorCode } from 'src/common/exceptions/enums/erro-codes.enum';
 import { OperationLogService } from 'src/operation-log/operation-log.service';
+import { SessionType } from 'src/common/types';
 
 @Injectable()
 export class AccountsService {
@@ -18,9 +19,9 @@ export class AccountsService {
     private accountRepository: Repository<AccountEntity>,
     private readonly operationLogService: OperationLogService
   ) { }
-  async createAccount(createAccountDto: CreateAccountDto) {
+  async createAccount(createAccountDto: CreateAccountDto, session?: SessionType) {
     const operationLog: OperationLog = {
-      operationType: OperationLogType.AUTH_REGISTRATION,
+      operationType: OperationLogType.CREATE_ACCOUNT_SERVICE,
       type: LogType.INFO,
       message: '',
       requestId: v4(),
@@ -38,7 +39,6 @@ export class AccountsService {
 
       throw new AppException(ErrorCode.CREATE_ACCOUNT_ERROR);
     }
-
   }
 
   findAll() {
@@ -49,11 +49,29 @@ export class AccountsService {
     return `This action returns a #${id} account`;
   }
 
-  update(id: number, updateAccountDto: UpdateAccountDto) {
+  update(id: string, updateAccountDto: UpdateAccountDto, session?: SessionType) {
     return `This action updates a #${id} account`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} account`;
+  async remove(id: string, session?: SessionType) {
+   const operationLog: OperationLog = {
+      operationType: OperationLogType.REMOVE_ACCOUNT_SERVICE,
+      type: LogType.INFO,
+      message: '',
+      requestId: session?.requestId || v4(),
+      metadata: session
+    };
+    try {
+      return await this.accountRepository.softDelete({ id })
+    } catch (error) {
+      void this.operationLogService.log({
+        ...operationLog,
+        type: LogType.ERROR,
+        message: `Failed to remove account, error: ${normalizeError(error)}`,
+        error,
+      });
+
+      throw new AppException(ErrorCode.REMOVE_ACCOUNT_ERROR);
+    }
   }
 }

@@ -45,7 +45,7 @@ export class CreateUserTable1793132504056 implements MigrationInterface {
                     {
                         name: 'login',
                         type: 'text',
-                        isNullable: true,
+                        isNullable: false,
                     },
                     {
                         name: 'profileImageUrl',
@@ -55,7 +55,7 @@ export class CreateUserTable1793132504056 implements MigrationInterface {
                     {
                         name: 'email',
                         type: 'text',
-                        isNullable: true,
+                        isNullable: false,
                     },
                     ...baseMigrationsFields,
                 ],

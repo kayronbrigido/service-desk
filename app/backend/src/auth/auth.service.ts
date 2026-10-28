@@ -28,13 +28,23 @@ export class AuthService {
     private readonly keycloakAdminService: KeycloakAdminService
   ) { }
 
-  async create(userData: CreateAuthDto) {
+  async create(userData: CreateAuthDto, session?: SessionType) {
+    const customSession: SessionType = {
+      ...session,
+      deviceId: session?.deviceId || userData.deviceId,
+      login: session?.login || userData.login,
+      email: session?.email || userData.email,
+      requestId: session?.requestId || v4()
+    }
     const operationLog: OperationLog = {
       operationType: OperationLogType.AUTH_REGISTRATION,
       type: LogType.INFO,
       message: '',
       requestId: v4()
     };
+
+    let account
+    let user
     try {
       userData.name = toTitleCase(userData.name);
 
@@ -43,12 +53,13 @@ export class AuthService {
       }
 
 
-      const account = await this.accountService.createAccount(userData)
+      account = await this.accountService.createAccount(userData, customSession)
 
       if (!account?.id) {
         throw new AppException(ErrorCode.CREATE_ACCOUNT_ERROR);
       }
-      const user = await this.userService.createUser({...userData, accountId: account.id})
+
+      user = await this.userService.createUser({ ...userData, accountId: account.id }, customSession)
 
       return user
     } catch (error) {
@@ -61,7 +72,11 @@ export class AuthService {
           ...operationLog.metadata,
         },
       });
-
+      void this.rollbackCreate({
+        accountId: account.id,
+        userId: user.id,
+        session: customSession
+      })
       throw error;
     }
 
@@ -142,4 +157,16 @@ export class AuthService {
   }
 
   async validateSession() { }
+
+  async rollbackCreate({ accountId, userId, session }: { accountId?: string, userId?: string, session?: SessionType }) {
+
+    if (accountId) {
+      await this.accountService.remove(accountId, session)
+    }
+
+    if (userId) {
+      await this.userService.remove(userId, session)
+    }
+
+  }
 }

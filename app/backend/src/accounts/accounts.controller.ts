@@ -2,6 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { AccountsService } from './accounts.service';
 import { CreateAccountDto } from './dto/create-account.dto';
 import { UpdateAccountDto } from './dto/update-account.dto';
+import type { Request } from 'express';
 
 @Controller('accounts')
 export class AccountsController {
@@ -23,12 +24,12 @@ export class AccountsController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateAccountDto: UpdateAccountDto) {
-    return this.accountsService.update(+id, updateAccountDto);
+  update(@Param('id') id: string, @Body() updateAccountDto: UpdateAccountDto, req: Request) {
+    return this.accountsService.update(id, updateAccountDto, req?.session);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.accountsService.remove(+id);
+  remove(@Param('id') id: string, req: Request) {
+    return this.accountsService.remove(id, req?.session);
   }
 }

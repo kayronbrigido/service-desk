@@ -5,15 +5,23 @@ import { UserEntity } from './entities/user.entity';
 import { KeycloakAdminService } from 'src/identity-server/keycloak-admin.service';
 import { Repository } from 'typeorm';
 import { InjectType } from 'src/common/types/inject.types';
+import { AppException } from 'src/common/exceptions/app.exceptions';
+import { ErrorCode } from 'src/common/exceptions/enums/erro-codes.enum';
+import { normalizeError } from 'src/common/utils/normalize';
+import { OperationLog, OperationLogType, LogType } from 'src/operation-log/types/operation-log.types';
+import { v4 } from 'uuid';
+import { SessionType } from 'src/common/types';
+import { OperationLogService } from 'src/operation-log/operation-log.service';
 
 @Injectable()
 export class UsersService {
   constructor(
     @Inject(InjectType.USERS_REPOSITORY)
     private usersRepository: Repository<UserEntity>,
+    private readonly operationLogService: OperationLogService,
     private readonly keycloakAdminService: KeycloakAdminService
   ) { }
-  async createUser(userData: CreateUserDto) {
+  async createUser(userData: CreateUserDto, session?: SessionType) {
 
     const name = userData.name.split(' ');
 
@@ -49,7 +57,26 @@ export class UsersService {
     return `This action updates a #${id} user`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} user`;
+  async remove(id: string, session?: SessionType) {
+    const operationLog: OperationLog = {
+      operationType: OperationLogType.REMOVE_ACCOUNT_SERVICE,
+      type: LogType.INFO,
+      message: '',
+      requestId: session?.requestId || v4(),
+      metadata: session
+    };
+    try {
+      return await this.usersRepository.softDelete({ id })
+    } catch (error) {
+      void this.operationLogService.log({
+        ...operationLog,
+        type: LogType.ERROR,
+        message: `Failed to remove account, error: ${normalizeError(error)}`,
+        error,
+      });
+
+      throw new AppException(ErrorCode.REMOVE_ACCOUNT_ERROR);
+    }
   }
 }
+
