@@ -8,7 +8,7 @@ export interface ITicket {
 }
 
 export enum ETicketStatus {
-  OPENED = '1',
-  PENDING = '2',
-  FINISHED = '3',
+  OPENED = 'OPENED',
+  PENDING = 'PENDING',
+  FINISHED = 'FINISHED',
 }

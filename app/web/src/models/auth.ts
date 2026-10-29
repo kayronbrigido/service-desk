@@ -1,7 +1,37 @@
 import { RolesEnum } from './enums';
 
-export interface IAuthResponse {
+import { AccountType } from "./account";
 
+export interface CreateAuthDto {
+  type: AccountType;
+  name: string;
+  taxIdentifier: string;
+  taxIdentifierCountry: string;
+  login: string;
+  email: string;
+  password: string;
+  representative?: {
+    name: string;
+    taxIdentifier: string;
+    taxIdentifierCountry: string;
+    email: string;
+    cellphone: string;
+  } | null;
+}
+
+export interface AuthPayload {
+  login: string;
+  password: string;
+}
+
+export interface AuthResponse {
+  token?: string;
+  access_token?: string;
+  expires_in?: number,
+  refresh_expires_in?: number,
+  refresh_token?: string,
+  user: { id: string; name: string; email: string };
+  expired?: boolean
 }
 
 export interface IUserData {
@@ -12,13 +42,6 @@ export interface IUserData {
   companyId?: string
 }
 
-export interface ILoggerUserData extends IUserData {
-  id?: string
-}
-
-export interface ICreateLogin extends IUserData {
-  password?: string,
-}
 
 export interface IAddress {
   street?: string,
@@ -29,21 +52,5 @@ export interface IAddress {
   country?: string,
   zipCode?: string,
   additionalInformation?: string,
-}
-
-export interface ICreateUserPayload extends ICreateLogin {
-  role?: RolesEnum
-  companyId?: string,
-}
-
-export interface ICreateCompanyPayload extends ICreateLogin {
-  taxIdentifier?: string,
-  name?: string,
-  tradeName?: string,
-  phone?: string,
-  email?: string,
-  address?: IAddress,
-  type?: number
-  userId?: string
 }
 

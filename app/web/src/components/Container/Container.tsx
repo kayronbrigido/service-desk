@@ -1,21 +1,41 @@
-import { MainTheme } from '@src/config/theme';
-import { ReactNode } from 'react';
+import type { HTMLAttributes } from "react";
+import { containerStyle } from "./container.styles";
+import { mergeStyles } from "@src/utils/merge-styles";
 
-interface IContainerProps {
-  children: ReactNode,
-  className?: string
+type ContainerProps = {
+  children: React.ReactNode;
+} & Pick<
+  HTMLAttributes<HTMLDivElement>,
+  | "style"
+  | "id"
+  | "role"
+  | "aria-label"
+  | "onMouseEnter"
+  | "onMouseLeave"
+  | "title"
+>;
+
+export function Container({
+  children,
+  style,
+  id,
+  role,
+  "aria-label": ariaLabel,
+  onMouseEnter,
+  onMouseLeave,
+  title
+}: ContainerProps) {
+  return (
+    <div
+      title={title}
+      id={id}
+      role={role}
+      aria-label={ariaLabel}
+      style={mergeStyles(containerStyle, style)}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      {children}
+    </div>
+  );
 }
-const Container = ({ className, children }: IContainerProps) => (
-  <div
-    className={className}
-    style={{
-      borderWidth: 2,
-      borderColor: MainTheme.borderPrimaryColorBorder,
-      backgroundColor: MainTheme.cardPrimaryBackgroundColor,
-      borderRadius: 10
-    }}>
-    {children}
-  </div>
-)
-
-export default Container;

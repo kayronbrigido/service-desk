@@ -1,11 +1,7 @@
-export { default as BaseModal } from './BaseModal/BaseModal';
-export { default as Button } from './Button/Button';
-export { default as Container } from './Container/Container';
-export { default as DataTable } from './DataTable/DataTable';
-export { default as HeaderTitle } from './HeaderTitle/HeaderTitle';
-export { default as Input } from './Input/Input';
-export { default as Link } from './Link/Link';
-export { default as LinkList } from './LinkList/LinkList';
-export { default as Select } from './Select/Select';
-export { default as SidebarMenu } from './SidebarMenu/SidebarMenu';
-export { default as TextArea } from './TextArea/TextArea';
+export { ButtonIcon } from './button-icon/button-icon'
+export { Button } from './button/button'
+export { Container } from './container/container'
+export { Image } from './image/image'
+export { Input } from './input/input'
+export { Text } from './text/text'
+export { TouchableOpacity } from './touchable-opacity/touchable-opacity'

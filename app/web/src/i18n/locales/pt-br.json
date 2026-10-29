@@ -1,0 +1,35 @@
+{
+  "general": {
+    "username": "Usuário",
+    "password": "Senha",
+    "email": "Email",
+    "tax_identifier": "Documento",
+    "name": "Nome",
+    "cellphone": "Celular",
+    "confirm": "Confirma",
+    "my_account": "Minha conta",
+    "login": "Entrar",
+    "business": "Empresarial",
+    "personal": "Pessoal",
+    "add": "Adicionar",
+    "update": "Atualizar",
+    "delete": "Excluir",
+    "remove": "Remover",
+    "search": "Pesquisar",
+    "zipCode": "CEP"
+  },
+  "pages": {
+    "login": {
+      "login": "Login",
+      "registration": "Não possui conta? clique aqui para se cadastrar",
+      "username": "Usuário",
+      "password": "Senha"
+    },
+    "signup": {}
+  },
+  "enums": {},
+  "errors": {
+    "generic_error": "Ocorreu um erro desconhecido"
+  },
+  "success": {  }
+}

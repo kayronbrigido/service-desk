@@ -19,7 +19,7 @@ interface IButton {
   onClick: MouseEventHandler<HTMLInputElement>;
 }
 
-const Button = (props: IButton) => {
+export const Button = (props: IButton) => {
   const [isPressed, setIsPressed] = useState(false);
 
   const handleMouseDown = () => {
@@ -66,5 +66,3 @@ const Button = (props: IButton) => {
     </div>
   );
 };
-
-export default Button;

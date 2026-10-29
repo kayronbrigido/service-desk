@@ -16,7 +16,7 @@ interface IInput {
   inputClassName?: string
 } 
 
-const Input = (props: IInput) => {
+export const Input = (props: IInput) => {
 
   const { secret, divClassName, inputClassName, onClick, ...restProps} = props;
   return (
@@ -32,5 +32,3 @@ const Input = (props: IInput) => {
     </div>
   )
 }
-
-export default Input;

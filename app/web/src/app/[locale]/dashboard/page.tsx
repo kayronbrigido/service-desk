@@ -1,9 +1,7 @@
+import DashboardHome from "./dashboard";
 
-export default function Home() {
+export default function DashboardHomePage() {
 
-  return (
-    <div>
-      <h1>Dashboard</h1>
-    </div>
-  )
+  return <DashboardHome/>
+
 }
